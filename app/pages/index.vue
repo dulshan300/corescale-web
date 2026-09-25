@@ -38,6 +38,22 @@
       </div>
     </section>
 
+    <!-- Platforms -->
+    <section class="bg-white py-10 border-b border-dark-200">
+      <div class="container-custom px-6 text-center">
+        <p class="text-dark-400 text-xs font-medium tracking-wide uppercase mb-5">Also work with us on trusted global platforms</p>
+        <div class="flex flex-wrap items-center justify-center gap-4">
+          <span
+            v-for="platform in platforms"
+            :key="platform"
+            class="px-6 py-2.5 bg-dark-50 border border-dark-200 rounded-lg text-dark-600 font-semibold text-lg tracking-tight"
+          >
+            {{ platform }}
+          </span>
+        </div>
+      </div>
+    </section>
+
     <!-- Services Overview -->
     <section class="section-padding bg-dark-50">
       <div class="container-custom">
@@ -57,6 +73,7 @@
             <div class="w-14 h-14 bg-brand-50 rounded-xl flex items-center justify-center mb-6 group-hover:bg-accent-50 transition-colors">
               <span class="text-2xl">{{ service.icon }}</span>
             </div>
+            <p class="text-accent-600 text-sm font-medium mb-2">{{ service.pain }}</p>
             <h3 class="text-xl font-semibold mb-3 text-dark-900">{{ service.title }}</h3>
             <p class="text-dark-500 text-sm leading-relaxed">{{ service.description }}</p>
             <div class="absolute bottom-8 right-8 opacity-0 group-hover:opacity-100 transition-opacity">
@@ -156,21 +173,26 @@ const stats = [
   { value: '99.9%', label: 'Uptime SLA' },
 ]
 
+const platforms = ['Fiverr', 'Upwork']
+
 const services = [
   {
     icon: '⚡',
-    title: 'Web Development',
-    description: 'Custom web applications built with modern frameworks, designed for performance, scalability, and maintainability.',
+    pain: 'Software that is slow or hard to change?',
+    title: 'Web Development That Fits Your Business',
+    description: 'We build fast, reliable web platforms around the way you work, so customers get a smooth experience and your team stops fighting its tools.',
   },
   {
     icon: '🏗️',
-    title: 'Solution Architecture',
-    description: 'Strategic technical planning and architecture design that aligns technology decisions with business objectives.',
+    pain: 'Unsure what to build, or afraid of costly mistakes?',
+    title: 'A Clear Plan Before You Build',
+    description: 'We turn your goals into a simple, proven blueprint, so you invest once, avoid rework, and can grow with confidence.',
   },
   {
     icon: '🤖',
-    title: 'Custom AI Agents',
-    description: 'Bespoke AI agents that automate corporate workflows — from data entry to customer operations — freeing your team to focus on higher-value work.',
+    pain: 'Your team loses hours to repetitive admin work?',
+    title: 'Automate the Busywork with AI Agents',
+    description: 'Custom AI agents handle routine tasks like data entry, reports, and customer queries, so your people can focus on work that grows the business.',
   },
 ]
 

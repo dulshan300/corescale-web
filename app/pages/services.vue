@@ -23,7 +23,8 @@
             <div class="inline-flex items-center gap-2 bg-accent-50 border border-accent-200 rounded-full px-3 py-1 mb-4">
               <span class="text-accent-600 text-xs font-medium">{{ service.tag }}</span>
             </div>
-            <h2 class="text-2xl md:text-3xl font-bold mb-4 text-dark-900">{{ service.title }}</h2>
+            <h2 class="text-2xl md:text-3xl font-bold mb-2 text-dark-900">{{ service.title }}</h2>
+            <p class="text-accent-600 font-medium mb-4">{{ service.pain }}</p>
             <p class="text-dark-500 mb-6 leading-relaxed">{{ service.description }}</p>
             <ul class="space-y-3">
               <li v-for="item in service.features" :key="item" class="flex items-center gap-2 text-sm text-dark-600">
@@ -67,7 +68,8 @@ const services = [
     icon: '⚡',
     tag: 'Development',
     title: 'Web Application Development',
-    description: 'We build custom web applications using modern frameworks and best practices. From single-page applications to complex enterprise systems, our development team delivers solutions that perform at scale.',
+    pain: 'Is your software slow, hard to change, or a poor fit for how you work?',
+    description: 'We build fast, reliable web applications around your real processes. Your customers get a smooth experience, your team gets tools that help instead of get in the way, and the system keeps working as you grow.',
     features: [
       'Custom React, Vue, and Next.js front ends',
       'Backend systems in Laravel (PHP), FastAPI (Python), and Node.js',
@@ -81,7 +83,8 @@ const services = [
     icon: '🏗️',
     tag: 'Architecture',
     title: 'Solution Architecture & Consulting',
-    description: 'Our architects work closely with your team to design technology solutions that align with your business goals. We create detailed technical blueprints that guide implementation and ensure long-term success.',
+    pain: 'Not sure what to build, or worried about expensive mistakes?',
+    description: 'We work with your team to turn your goals into a clear, practical plan. You get a simple blueprint, the right technology choices, and a roadmap that saves you from costly rework later.',
     features: [
       'Enterprise architecture design',
       'Technical strategy & roadmapping',
@@ -94,7 +97,8 @@ const services = [
     icon: '🤖',
     tag: 'Automation',
     title: 'Custom AI Agents',
-    description: 'We design and build intelligent AI agents tailored to your corporate processes. From automating repetitive back-office tasks to orchestrating multi-step operational workflows, our agents integrate seamlessly with your existing systems to boost efficiency and cut costs.',
+    pain: 'Is your team losing hours every week to repetitive admin work?',
+    description: 'We build AI agents that take over routine tasks like data entry, report preparation, and customer queries. They work with the systems you already use, run around the clock, and free your people for higher-value work.',
     features: [
       'Custom AI agent design & development',
       'Corporate workflow & process automation',
@@ -107,7 +111,8 @@ const services = [
     icon: '🔒',
     tag: 'Security',
     title: 'Security & Compliance',
-    description: 'Security is not an afterthought. We integrate security practices throughout the development lifecycle and help you meet compliance requirements for your industry.',
+    pain: 'Worried about data leaks, or failing a client security audit?',
+    description: 'We build security into your systems from day one and help you meet the standards your clients and regulators expect, so you can win deals and protect your reputation.',
     features: [
       'Security architecture review',
       'Penetration testing',
@@ -120,7 +125,8 @@ const services = [
     icon: '📱',
     tag: 'Digital',
     title: 'Digital Transformation',
-    description: 'Modernize your legacy systems and processes with our digital transformation services. We help enterprises embrace new technologies to stay competitive.',
+    pain: 'Stuck with old systems, spreadsheets, and manual processes?',
+    description: 'We move your business from outdated tools to modern, connected systems step by step, without stopping day-to-day operations, so you work faster and keep up with competitors.',
     features: [
       'Legacy system modernization',
       'Process automation',
