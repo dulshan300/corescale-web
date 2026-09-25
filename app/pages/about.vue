@@ -81,7 +81,7 @@ const values = [
 ]
 
 const expertiseList = [
-  { years: 10, label: 'Web Development', detail: 'React, Vue, Next.js, Node.js' },
+  { years: 10, label: 'Web Development', detail: 'Vue, Next.js, Laravel, FastAPI' },
   { years: 3, label: 'Custom AI Agents', detail: 'LLM integration, workflow automation' },
   { years: 12, label: 'Enterprise Systems', detail: 'ERP, CRM, Custom Platforms' },
   { years: 7, label: 'Security & Compliance', detail: 'SOC 2, GDPR, secure architecture' },

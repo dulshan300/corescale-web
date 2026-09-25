@@ -90,17 +90,17 @@
                 </div>
                 <div class="flex items-center gap-3 text-dark-600">
                   <span class="text-accent-500">📞</span>
-                  <span>+94 XX XXX XXXX</span>
+                  <a href="tel:+94727433525" class="hover:text-brand-900 transition-colors">+94 72 743 3525</a>
                 </div>
                 <div class="flex items-center gap-3 text-dark-600">
                   <span class="text-accent-500">📍</span>
-                  <span>Colombo, Sri Lanka</span>
+                  <span>Sri Lanka · Working with clients worldwide</span>
                 </div>
               </div>
             </div>
 
             <div>
-              <h3 class="font-semibold text-dark-900 mb-3">Business Hours</h3>
+              <h3 class="font-semibold text-dark-900 mb-3">Business Hours <span class="text-dark-400 text-xs font-normal">(Sri Lanka time, GMT+5:30)</span></h3>
               <div class="space-y-2 text-sm text-dark-600">
                 <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
                 <p>Saturday: 10:00 AM - 2:00 PM</p>

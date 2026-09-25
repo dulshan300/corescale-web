@@ -69,7 +69,8 @@ const services = [
     title: 'Web Application Development',
     description: 'We build custom web applications using modern frameworks and best practices. From single-page applications to complex enterprise systems, our development team delivers solutions that perform at scale.',
     features: [
-      'Custom React, Vue, and Next.js applications',
+      'Custom React, Vue, and Next.js front ends',
+      'Backend systems in Laravel (PHP), FastAPI (Python), and Node.js',
       'RESTful and GraphQL API development',
       'Progressive Web Apps (PWA)',
       'Microservices architecture',

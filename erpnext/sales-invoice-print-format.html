@@ -1,0 +1,120 @@
+<style>
+    .invoice-box { font-family: Inter, Helvetica, Arial, sans-serif; color: #212529; font-size: 12px; line-height: 1.5; }
+    .invoice-box table { width: 100%; border-collapse: collapse; }
+    .invoice-box .head td { vertical-align: top; padding: 0; }
+    .invoice-box .brand { font-size: 22px; font-weight: 700; color: #0f2a52; letter-spacing: -0.3px; }
+    .invoice-box .brand span { color: #1e9cd7; }
+    .invoice-box .title { text-align: right; font-size: 24px; font-weight: 700; color: #1e9cd7; text-transform: uppercase; letter-spacing: 1px; }
+    .invoice-box .muted { color: #868e96; }
+    .invoice-box .rule { border: 0; border-top: 3px solid #0f2a52; margin: 14px 0 18px; }
+    .invoice-box .cs-label { display: block; text-align: inherit; padding: 0; font-size: 10px; text-transform: uppercase; letter-spacing: 1px; color: #868e96; font-weight: 600; margin-bottom: 3px; }
+    .invoice-box .cs-value { display: block; font-size: 13px; }
+    .invoice-box .meta td { padding: 0 0 14px; vertical-align: top; }
+    .invoice-box .items { margin-top: 6px; }
+    .invoice-box .items th { background: #0f2a52; color: #fff; padding: 8px 10px; text-align: left; font-weight: 600; font-size: 11px; }
+    .invoice-box .items td { padding: 8px 10px; border-bottom: 1px solid #dee2e6; vertical-align: top; }
+    .invoice-box .items .num { text-align: right; white-space: nowrap; }
+    .invoice-box .items .desc { color: #868e96; font-size: 11px; }
+    .invoice-box .totals { width: 45%; margin-left: 55%; margin-top: 12px; }
+    .invoice-box .totals td { padding: 5px 10px; }
+    .invoice-box .totals .num { text-align: right; }
+    .invoice-box .totals .grand td { background: #e6f4fb; color: #0f2a52; font-size: 14px; font-weight: 700; border-top: 2px solid #1e9cd7; }
+    .invoice-box .notes { margin-top: 24px; padding-top: 10px; border-top: 1px solid #dee2e6; font-size: 11px; color: #495057; }
+    .invoice-box .thanks { margin-top: 20px; text-align: center; color: #1e9cd7; font-weight: 600; }
+</style>
+
+<div class="invoice-box">
+
+    <table class="head">
+        <tr>
+            <td>
+                <div class="brand">Core<span>scale</span></div>
+                <div class="muted">{{ doc.company }}</div>
+            </td>
+            <td class="title">
+                {{ _("Invoice") }}
+                <div class="muted" style="font-size:12px; font-weight:500; letter-spacing:0; text-transform:none;">{{ doc.name }}</div>
+            </td>
+        </tr>
+    </table>
+
+    <hr class="rule">
+
+    <table class="meta">
+        <tr>
+            <td style="width:50%;">
+                <div class="cs-label">{{ _("Bill To") }}</div>
+                <strong>{{ doc.customer_name }}</strong><br>
+                {% if doc.address_display %}{{ doc.address_display }}{% endif %}
+            </td>
+            <td style="width:50%; text-align:right;">
+                <div class="cs-label">{{ _("Invoice Date") }}</div>
+                <div class="cs-value">{{ frappe.utils.formatdate(doc.posting_date) }}</div>
+                {% if doc.due_date %}
+                <div class="cs-label" style="margin-top:14px;">{{ _("Due Date") }}</div>
+                <div class="cs-value">{{ frappe.utils.formatdate(doc.due_date) }}</div>
+                {% endif %}
+            </td>
+        </tr>
+    </table>
+
+    <table class="items">
+        <thead>
+            <tr>
+                <th style="width:5%;">#</th>
+                <th>{{ _("Item") }}</th>
+                <th class="num" style="width:10%; text-align:right;">{{ _("Qty") }}</th>
+                <th class="num" style="width:18%; text-align:right;">{{ _("Rate") }}</th>
+                <th class="num" style="width:18%; text-align:right;">{{ _("Amount") }}</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in doc.items %}
+            <tr>
+                <td>{{ loop.index }}</td>
+                <td>
+                    {{ item.item_name }}
+                    {% if item.description and (item.description|striptags|trim) != item.item_name %}
+                    <div class="desc">{{ item.description }}</div>
+                    {% endif %}
+                </td>
+                <td class="num">{{ item.qty }}</td>
+                <td class="num">{{ item.get_formatted("rate") }}</td>
+                <td class="num">{{ item.get_formatted("amount") }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <table class="totals">
+        <tr>
+            <td>{{ _("Subtotal") }}</td>
+            <td class="num">{{ doc.get_formatted("total") }}</td>
+        </tr>
+        {% if doc.discount_amount %}
+        <tr>
+            <td>{{ _("Discount") }}</td>
+            <td class="num">- {{ doc.get_formatted("discount_amount") }}</td>
+        </tr>
+        {% endif %}
+        {% for tax in doc.taxes %}
+        <tr>
+            <td>{{ tax.description }}</td>
+            <td class="num">{{ tax.get_formatted("tax_amount") }}</td>
+        </tr>
+        {% endfor %}
+        <tr class="grand">
+            <td>{{ _("Grand Total") }}</td>
+            <td class="num">{{ doc.get_formatted("grand_total") }}</td>
+        </tr>
+    </table>
+
+    {% if doc.terms or doc.in_words %}
+    <div class="notes">
+        {% if doc.in_words %}<div><strong>{{ _("In Words") }}:</strong> {{ doc.in_words }}</div>{% endif %}
+        {% if doc.terms %}<div style="margin-top:6px;">{{ doc.terms }}</div>{% endif %}
+    </div>
+    {% endif %}
+
+    <div class="thanks">{{ _("Thank you for your business.") }}</div>
+</div>

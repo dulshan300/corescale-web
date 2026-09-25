@@ -16,9 +16,9 @@ useHead({
         url: 'https://corescale.dev',
         logo: 'https://corescale.dev/logo-full.png',
         email: 'info@corescale.dev',
+        telephone: '+94727433525',
         address: {
           '@type': 'PostalAddress',
-          addressLocality: 'Colombo',
           addressCountry: 'LK',
         },
         sameAs: [],

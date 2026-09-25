@@ -183,6 +183,8 @@ const points = [
 
 const technologies = [
   { name: 'React / Next.js', abbr: 'Re', category: 'Frontend' },
+  { name: 'Python / FastAPI', abbr: 'Py', category: 'Backend' },
+  { name: 'PHP / Laravel', abbr: 'PH', category: 'Backend' },
   { name: 'Node.js / Express', abbr: 'No', category: 'Backend' },
   { name: 'OpenAI / Anthropic / LangChain', abbr: 'AI', category: 'AI Agents' },
   { name: 'PostgreSQL / MongoDB', abbr: 'DB', category: 'Database' },
