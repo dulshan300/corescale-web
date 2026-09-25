@@ -143,6 +143,7 @@
     <!-- CTA Section -->
     <section class="relative overflow-hidden bg-brand-900">
       <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-accent-500/20 via-transparent to-transparent"></div>
+      <ClientOnly><HeroNetwork dark /></ClientOnly>
       <div class="relative section-padding">
         <div class="container-custom text-center">
           <h2 class="text-3xl md:text-4xl font-bold mb-4 text-white">Ready to Transform Your Business?</h2>

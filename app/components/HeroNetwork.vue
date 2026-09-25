@@ -2,10 +2,17 @@
   <div ref="host" class="absolute inset-0 pointer-events-none hero-network" aria-hidden="true"></div>
 </template>
 
-<script setup lang="ts">
-import { tsParticles, type Container } from '@tsparticles/engine'
+<script lang="ts">
+import { tsParticles } from '@tsparticles/engine'
 import { loadSlim } from '@tsparticles/slim'
 
+let enginePromise: Promise<void> | undefined
+</script>
+
+<script setup lang="ts">
+import type { Container } from '@tsparticles/engine'
+
+const props = defineProps<{ dark?: boolean }>()
 const host = ref<HTMLElement | null>(null)
 let container: Container | undefined
 
@@ -13,7 +20,8 @@ onMounted(async () => {
   if (!host.value) return
   const id = `hero-particles-${Math.random().toString(36).slice(2)}`
   host.value.id = id
-  await loadSlim(tsParticles)
+  enginePromise ??= loadSlim(tsParticles)
+  await enginePromise
   container = await tsParticles.load({
     id,
     options: {
@@ -23,12 +31,12 @@ onMounted(async () => {
       detectRetina: true,
       particles: {
         number: { value: 85, density: { enable: true, width: 1200, height: 800 } },
-        color: { value: ['#1e9cd7', '#0f2a52'] },
+        color: { value: props.dark ? ['#1e9cd7', '#ffffff'] : ['#1e9cd7', '#0f2a52'] },
         shape: { type: ['circle', 'triangle', 'polygon'], options: { polygon: { sides: 5 } } },
         opacity: { value: { min: 0.35, max: 0.7 } },
         size: { value: { min: 2, max: 5 } },
         rotate: { value: { min: 0, max: 360 }, animation: { enable: true, speed: 4 } },
-        links: { enable: true, distance: 150, color: '#1e9cd7', opacity: 0.3, width: 1, triangles: { enable: true, color: '#1e9cd7', opacity: 0.03 } },
+        links: { enable: true, distance: 150, color: '#1e9cd7', opacity: props.dark ? 0.45 : 0.3, width: 1, triangles: { enable: true, color: '#1e9cd7', opacity: 0.04 } },
         move: { enable: true, speed: 1.2, outModes: { default: 'bounce' } },
       },
       interactivity: {
