@@ -99,8 +99,34 @@
       </div>
     </section>
 
-    <!-- Why Choose Us -->
+    <!-- How We Work -->
     <section class="section-padding bg-white">
+      <div class="container-custom">
+        <div class="text-center mb-16">
+          <span class="text-accent-500 text-sm font-medium tracking-wide uppercase mb-3 block">How We Work</span>
+          <h2 class="text-3xl md:text-4xl font-bold mb-4 text-dark-900">From First Call to Launch in 5 Simple Steps</h2>
+          <p class="text-dark-500 max-w-xl mx-auto">
+            You always know what happens next, what it costs, and who is doing the work.
+          </p>
+        </div>
+        <ol class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
+          <li
+            v-for="(step, index) in steps"
+            :key="step.title"
+            class="relative bg-dark-50 border border-dark-200 rounded-2xl p-6"
+          >
+            <div class="w-10 h-10 bg-brand-900 text-white rounded-full flex items-center justify-center font-bold mb-4">
+              {{ index + 1 }}
+            </div>
+            <h3 class="font-semibold text-dark-900 mb-2">{{ step.title }}</h3>
+            <p class="text-dark-500 text-sm leading-relaxed">{{ step.description }}</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="section-padding bg-dark-50">
       <div class="container-custom">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div>
@@ -125,10 +151,10 @@
           </div>
           <div class="relative">
             <div class="absolute inset-0 bg-accent-500/5 rounded-3xl blur-3xl"></div>
-            <div class="relative bg-dark-50 border border-dark-200 rounded-2xl p-8">
+            <div class="relative bg-white border border-dark-200 rounded-2xl p-8">
               <h3 class="text-sm font-medium text-dark-400 mb-6 uppercase tracking-wide">Tech Stack</h3>
               <div class="grid grid-cols-2 gap-4">
-                <div v-for="tech in technologies" :key="tech.name" class="flex items-center gap-3 bg-white rounded-xl p-3 border border-dark-100">
+                <div v-for="tech in technologies" :key="tech.name" class="flex items-center gap-3 bg-dark-50 rounded-xl p-3 border border-dark-100">
                   <div class="w-10 h-10 bg-brand-50 rounded-lg flex items-center justify-center flex-shrink-0">
                     <span class="text-brand-600 font-mono text-sm font-medium">{{ tech.abbr }}</span>
                   </div>
@@ -216,6 +242,14 @@ const services = [
     title: 'Automate the Busywork with AI Agents',
     description: 'Custom AI agents handle routine tasks like data entry, reports, and customer queries, so your people can focus on work that grows the business.',
   },
+]
+
+const steps = [
+  { title: 'Discovery', description: 'We listen to your goals, problems, and budget, and ask the right questions.' },
+  { title: 'Plan', description: 'You get a clear scope, timeline, and quote in writing before any work begins.' },
+  { title: 'Build', description: 'We build in small stages and show you progress, so there are no surprises.' },
+  { title: 'Launch', description: 'We test everything, then take your solution live and train your team.' },
+  { title: 'Support', description: 'We stay with you after launch to fix issues and improve results.' },
 ]
 
 const points = [

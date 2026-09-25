@@ -42,6 +42,32 @@
       </div>
     </section>
 
+    <!-- FAQ -->
+    <section class="section-padding bg-dark-50 border-y border-dark-200">
+      <div class="container-custom max-w-3xl">
+        <div class="text-center mb-12">
+          <span class="text-accent-500 text-sm font-medium tracking-wide uppercase mb-3 block">FAQ</span>
+          <h2 class="text-3xl font-bold mb-4 text-dark-900">Frequently Asked Questions</h2>
+          <p class="text-dark-500">Quick answers to what clients ask us most.</p>
+        </div>
+        <div class="space-y-3">
+          <details
+            v-for="faq in faqs"
+            :key="faq.question"
+            class="group bg-white border border-dark-200 rounded-xl px-6 py-4 open:border-accent-500/40"
+          >
+            <summary class="flex items-center justify-between gap-4 cursor-pointer list-none font-semibold text-dark-900">
+              {{ faq.question }}
+              <svg class="w-5 h-5 text-accent-500 flex-shrink-0 transition-transform group-open:rotate-45" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+              </svg>
+            </summary>
+            <p class="text-dark-500 leading-relaxed mt-3">{{ faq.answer }}</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
     <!-- CTA -->
     <section class="section-padding bg-brand-900">
       <div class="container-custom text-center">
@@ -61,6 +87,62 @@
 useSeoMeta({
   title: 'Services | Corescale',
   description: 'Web application development, solution architecture, custom AI agents, security, and digital transformation services by Corescale.',
+})
+
+const faqs = [
+  {
+    question: 'What services does Corescale offer?',
+    answer: 'We build web applications, plan solution architecture, create custom AI agents that automate business work, secure systems and help you meet compliance standards, and modernize old systems through digital transformation.',
+  },
+  {
+    question: 'What is a custom AI agent, and how can it help my business?',
+    answer: 'An AI agent is software that can carry out routine tasks for your team, such as entering data, preparing reports, sorting emails, or answering common customer questions. It works with the systems you already use and can run around the clock, while your people review the important decisions.',
+  },
+  {
+    question: 'Which technologies do you use?',
+    answer: 'For websites and apps we mainly use Vue, Next.js, Laravel (PHP), FastAPI (Python), and Node.js. For AI agents we work with leading AI models and tools such as OpenAI, Anthropic, and LangChain. We choose what fits your project, not what is fashionable.',
+  },
+  {
+    question: 'How much does a project cost, and how long does it take?',
+    answer: 'It depends on what you need. After we understand your goals, we send a written quote with a clear scope and timeline before any work begins. Anything outside that scope is quoted separately, so there are no surprise bills.',
+  },
+  {
+    question: 'Can you work with the systems we already have?',
+    answer: 'Yes. We regularly connect new tools and AI agents to existing systems such as ERP, CRM, databases, and APIs, so you do not have to start from scratch.',
+  },
+  {
+    question: 'Do you work with clients outside Sri Lanka?',
+    answer: 'Yes. We work with clients around the world, including through platforms like Fiverr and Upwork. We communicate by email, chat, and video call, and our working hours are Sri Lanka time (GMT+5:30).',
+  },
+  {
+    question: 'Will I own the code and the finished product?',
+    answer: 'Yes. Once you have paid in full, you own the custom work we create for you, unless your agreement says otherwise. You can read the details in our Terms of Service.',
+  },
+  {
+    question: 'Do you offer support after launch?',
+    answer: 'Yes. We stay with you after launch to fix issues, keep things running smoothly, and improve results over time.',
+  },
+  {
+    question: 'How do I get started?',
+    answer: 'Send us a message through our contact page or email info@corescale.dev. Tell us briefly what you need, and we will reply to arrange a conversation.',
+  },
+]
+
+useHead({
+  script: [
+    {
+      type: 'application/ld+json',
+      innerHTML: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: faqs.map((faq) => ({
+          '@type': 'Question',
+          name: faq.question,
+          acceptedAnswer: { '@type': 'Answer', text: faq.answer },
+        })),
+      }),
+    },
+  ],
 })
 
 const services = [
