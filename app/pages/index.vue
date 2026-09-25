@@ -3,6 +3,7 @@
     <!-- Hero Section -->
     <section class="relative overflow-hidden bg-gradient-to-b from-brand-50 to-white">
       <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-accent-500/5 via-transparent to-transparent"></div>
+      <ClientOnly><HeroNetwork /></ClientOnly>
       <div class="relative section-padding pt-32 pb-24">
         <div class="container-custom text-center">
           <div class="inline-flex items-center gap-2 bg-accent-50 border border-accent-200 rounded-full px-4 py-1.5 mb-8">
