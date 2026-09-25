@@ -132,6 +132,21 @@
         color: #495057;
     }
 
+    .invoice-box .terms {
+        page-break-before: always;
+        font-size: 11px;
+        color: #495057;
+    }
+
+    .invoice-box .terms-title {
+        font-size: 14px;
+        font-weight: 700;
+        color: #0f2a52;
+        border-bottom: 3px solid #0f2a52;
+        padding-bottom: 8px;
+        margin-bottom: 12px;
+    }
+
     .invoice-box .thanks {
         margin-top: 20px;
         text-align: center;
@@ -226,12 +241,19 @@
         </tr>
     </table>
 
-    {% if doc.terms or doc.in_words %}
+    {% if doc.in_words %}
     <div class="notes">
-        {% if doc.in_words %}<div><strong>{{ _("In Words") }}:</strong> {{ doc.in_words }}</div>{% endif %}
-        {% if doc.terms %}<div style="margin-top:6px;">{{ doc.terms }}</div>{% endif %}
+        <div><strong>{{ _("In Words") }}:</strong> {{ doc.in_words }}</div>
     </div>
     {% endif %}
 
     <div class="thanks">{{ _("Thank you for your business.") }}</div>
+
+    {% set terms_text = (doc.terms or "")|striptags|replace("&nbsp;", " ")|trim %}
+    {% if terms_text %}
+    <div class="terms">
+        <div class="terms-title">{{ _("Terms & Conditions") }}</div>
+        {{ doc.terms }}
+    </div>
+    {% endif %}
 </div>
