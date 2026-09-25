@@ -7,7 +7,6 @@ const serviceLabels: Record<string, string> = {
   'web-development': 'Web Development',
   'solution-architecture': 'Solution Architecture',
   'ai-agents': 'Custom AI Agents',
-  security: 'Security & Compliance',
   'digital-transformation': 'Digital Transformation',
   other: 'Other',
 }

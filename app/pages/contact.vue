@@ -58,7 +58,6 @@
                   <option value="web-development">Web Development</option>
                   <option value="solution-architecture">Solution Architecture</option>
                   <option value="ai-agents">Custom AI Agents</option>
-                  <option value="security">Security & Compliance</option>
                   <option value="digital-transformation">Digital Transformation</option>
                   <option value="other">Other</option>
                 </select>

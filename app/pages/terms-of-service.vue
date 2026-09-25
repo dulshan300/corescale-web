@@ -59,7 +59,7 @@ const sections = [
   {
     title: 'Our services',
     paragraphs: [
-      'We provide web application development, solution architecture and consulting, custom AI agents, security and compliance work, and digital transformation. The scope, timeline, deliverables, and price of each project are agreed in writing before work starts. Anything outside that scope is quoted separately.',
+      'We provide web application development, solution architecture and consulting, custom AI agents, and digital transformation. The scope, timeline, deliverables, and price of each project are agreed in writing before work starts. Anything outside that scope is quoted separately.',
     ],
   },
   {

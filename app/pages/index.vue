@@ -255,7 +255,7 @@ const steps = [
 const points = [
   { title: 'Architecture-First Approach', description: 'We design systems that scale with your business needs.' },
   { title: 'Full-Stack Expertise', description: 'From frontend to infrastructure, we handle the complete technology stack.' },
-  { title: 'Enterprise-Grade Security', description: 'Security is built into every layer of our solutions.' },
+  { title: 'Clear Communication', description: 'Regular updates in plain language, so you always know where your project stands.' },
   { title: 'Ongoing Partnership', description: 'We provide continued support and optimization after launch.' },
 ]
 

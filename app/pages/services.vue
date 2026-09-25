@@ -86,13 +86,13 @@
 <script setup lang="ts">
 useSeoMeta({
   title: 'Services | Corescale',
-  description: 'Web application development, solution architecture, custom AI agents, security, and digital transformation services by Corescale.',
+  description: 'Web application development, solution architecture, custom AI agents, and digital transformation services by Corescale.',
 })
 
 const faqs = [
   {
     question: 'What services does Corescale offer?',
-    answer: 'We build web applications, plan solution architecture, create custom AI agents that automate business work, secure systems and help you meet compliance standards, and modernize old systems through digital transformation.',
+    answer: 'We build web applications, plan solution architecture, create custom AI agents that automate business work, and modernize old systems through digital transformation.',
   },
   {
     question: 'What is a custom AI agent, and how can it help my business?',
@@ -187,20 +187,6 @@ const services = [
       'LLM integration & orchestration',
       'Enterprise system integrations (CRM, ERP, APIs)',
       'Human-in-the-loop oversight & monitoring',
-    ],
-  },
-  {
-    icon: '🔒',
-    tag: 'Security',
-    title: 'Security & Compliance',
-    pain: 'Worried about data leaks, or failing a client security audit?',
-    description: 'We build security into your systems from day one and help you meet the standards your clients and regulators expect, so you can win deals and protect your reputation.',
-    features: [
-      'Security architecture review',
-      'Penetration testing',
-      'SOC 2 & GDPR compliance',
-      'Authentication & authorization systems',
-      'Secure coding practices',
     ],
   },
   {
