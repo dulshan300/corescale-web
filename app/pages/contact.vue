@@ -111,11 +111,11 @@
             <div>
               <h3 class="font-semibold text-dark-900 mb-3">Follow Us</h3>
               <div class="flex items-center gap-4">
-                <a href="#" class="w-10 h-10 bg-dark-100 rounded-lg flex items-center justify-center text-dark-500 hover:text-white hover:bg-brand-900 transition-colors">
+                <a href="https://www.linkedin.com/company/corescale-dev" target="_blank" rel="noopener noreferrer" aria-label="Corescale on LinkedIn" class="w-10 h-10 bg-dark-100 rounded-lg flex items-center justify-center text-dark-500 hover:text-white hover:bg-brand-900 transition-colors">
                   in
                 </a>
-                <a href="#" class="w-10 h-10 bg-dark-100 rounded-lg flex items-center justify-center text-dark-500 hover:text-white hover:bg-brand-900 transition-colors">
-                  gh
+                <a href="https://www.facebook.com/corescale.dev" target="_blank" rel="noopener noreferrer" aria-label="Corescale on Facebook" class="w-10 h-10 bg-dark-100 rounded-lg flex items-center justify-center text-dark-500 hover:text-white hover:bg-brand-900 transition-colors">
+                  f
                 </a>
               </div>
             </div>

@@ -21,7 +21,10 @@ useHead({
           '@type': 'PostalAddress',
           addressCountry: 'LK',
         },
-        sameAs: [],
+        sameAs: [
+          'https://www.linkedin.com/company/corescale-dev',
+          'https://www.facebook.com/corescale.dev',
+        ],
       }),
     },
   ],
