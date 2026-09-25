@@ -53,6 +53,7 @@ const sections = [
     items: [
       'Details you give us: your name, email address, company name, the service you are interested in, and the message you write in our contact form or send by email or phone.',
       'Basic technical data: information your browser shares automatically, such as device type, browser, pages visited, and approximate location, which helps us keep the site secure and working well.',
+      'Website usage data: we use Google Analytics to see, in aggregate, how visitors find and use our site, such as which pages are popular and which countries visitors come from. This data is used only to improve our website.',
     ],
   },
   {
@@ -74,7 +75,7 @@ const sections = [
   {
     title: 'Sharing your information',
     paragraphs: [
-      'We share information only with trusted service providers who help us run our business, such as email, hosting, and analytics providers, and only as needed for them to do their job. We may also share information if the law requires it. If we work with you through a platform such as Fiverr or Upwork, that platform\'s own privacy policy applies to the information you give it.',
+      'We share information only with trusted service providers who help us run our business, such as Resend (which delivers the emails sent through our contact form), Netlify (website hosting), and Google Analytics (website usage statistics), and only as needed for them to do their job. We may also share information if the law requires it. If we work with you through a platform such as Fiverr or Upwork, that platform\'s own privacy policy applies to the information you give it.',
     ],
   },
   {
@@ -104,7 +105,7 @@ const sections = [
   {
     title: 'Cookies',
     paragraphs: [
-      'Our website may use cookies or similar tools to work properly and to understand how visitors use it. You can block or delete cookies in your browser settings, though some parts of the site may not work as well.',
+      'Our website uses cookies from Google Analytics to understand how visitors use it. These cookies do not identify you by name. You can block or delete cookies in your browser settings, or install Google\'s opt-out browser add-on, and the site will still work.',
     ],
   },
   {

@@ -1,26 +1,143 @@
 <style>
-    .invoice-box { font-family: Inter, Helvetica, Arial, sans-serif; color: #212529; font-size: 12px; line-height: 1.5; }
-    .invoice-box table { width: 100%; border-collapse: collapse; }
-    .invoice-box .head td { vertical-align: top; padding: 0; }
-    .invoice-box .brand { font-size: 22px; font-weight: 700; color: #0f2a52; letter-spacing: -0.3px; }
-    .invoice-box .logo { display: block; height: 44px; width: auto; margin-bottom: 4px; }
-    .invoice-box .title { text-align: right; font-size: 24px; font-weight: 700; color: #1e9cd7; text-transform: uppercase; letter-spacing: 1px; }
-    .invoice-box .muted { color: #868e96; }
-    .invoice-box .rule { border: 0; border-top: 3px solid #0f2a52; margin: 14px 0 18px; }
-    .invoice-box .cs-label { display: block; text-align: inherit; padding: 0; font-size: 10px; text-transform: uppercase; letter-spacing: 1px; color: #868e96; font-weight: 600; margin-bottom: 3px; }
-    .invoice-box .cs-value { display: block; font-size: 13px; }
-    .invoice-box .meta td { padding: 0 0 14px; vertical-align: top; }
-    .invoice-box .items { margin-top: 6px; }
-    .invoice-box .items th { background: #0f2a52; color: #fff; padding: 8px 10px; text-align: left; font-weight: 600; font-size: 11px; }
-    .invoice-box .items td { padding: 8px 10px; border-bottom: 1px solid #dee2e6; vertical-align: top; }
-    .invoice-box .items .num { text-align: right; white-space: nowrap; }
-    .invoice-box .items .desc { color: #868e96; font-size: 11px; }
-    .invoice-box .totals { width: 45%; margin-left: 55%; margin-top: 12px; }
-    .invoice-box .totals td { padding: 5px 10px; }
-    .invoice-box .totals .num { text-align: right; }
-    .invoice-box .totals .grand td { background: #e6f4fb; color: #0f2a52; font-size: 14px; font-weight: 700; border-top: 2px solid #1e9cd7; }
-    .invoice-box .notes { margin-top: 24px; padding-top: 10px; border-top: 1px solid #dee2e6; font-size: 11px; color: #495057; }
-    .invoice-box .thanks { margin-top: 20px; text-align: center; color: #1e9cd7; font-weight: 600; }
+    body:last-child .print-format td img {
+        width: auto !important;
+    }
+
+    .invoice-box {
+        font-family: Inter, Helvetica, Arial, sans-serif;
+        color: #212529;
+        font-size: 12px;
+        line-height: 1.5;
+    }
+
+    .invoice-box table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    .invoice-box .head td {
+        vertical-align: top;
+        padding: 0;
+    }
+
+    .invoice-box .logo {
+        display: block;
+        height: 100px !important;
+        max-width: none !important;
+        margin-top: -28px;
+    }
+
+    .invoice-box .title {
+        text-align: right;
+        font-size: 24px;
+        font-weight: 700;
+        color: #1e9cd7;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .invoice-box .head td.title {
+        vertical-align: bottom;
+        padding-bottom: 14px;
+    }
+
+    .invoice-box .muted {
+        color: #868e96;
+    }
+
+    .invoice-box .rule {
+        border: 0;
+        border-top: 3px solid #0f2a52;
+        margin: 14px 0 18px;
+    }
+
+    .invoice-box .cs-label {
+        display: block;
+        text-align: inherit;
+        padding: 0;
+        font-size: 10px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: #868e96;
+        font-weight: 600;
+        margin-bottom: 3px;
+    }
+
+    .invoice-box .cs-value {
+        display: block;
+        font-size: 13px;
+    }
+
+    .invoice-box .meta td {
+        padding: 0 0 14px;
+        vertical-align: top;
+    }
+
+    .invoice-box .items {
+        margin-top: 6px;
+    }
+
+    .invoice-box .items th {
+        background: #0f2a52;
+        color: #fff;
+        padding: 8px 10px;
+        text-align: left;
+        font-weight: 600;
+        font-size: 11px;
+    }
+
+    .invoice-box .items td {
+        padding: 8px 10px;
+        border-bottom: 1px solid #dee2e6;
+        vertical-align: top;
+    }
+
+    .invoice-box .items .num {
+        text-align: right;
+        white-space: nowrap;
+    }
+
+    .invoice-box .items .desc {
+        color: #868e96;
+        font-size: 11px;
+    }
+
+    .invoice-box .totals {
+        width: 45%;
+        margin-left: 55%;
+        margin-top: 12px;
+    }
+
+    .invoice-box .totals td {
+        padding: 5px 10px;
+    }
+
+    .invoice-box .totals .num {
+        text-align: right;
+    }
+
+    .invoice-box .totals .grand td {
+        background: #e6f4fb;
+        color: #0f2a52;
+        font-size: 14px;
+        font-weight: 700;
+        border-top: 2px solid #1e9cd7;
+    }
+
+    .invoice-box .notes {
+        margin-top: 24px;
+        padding-top: 10px;
+        border-top: 1px solid #dee2e6;
+        font-size: 11px;
+        color: #495057;
+    }
+
+    .invoice-box .thanks {
+        margin-top: 20px;
+        text-align: center;
+        color: #1e9cd7;
+        font-weight: 600;
+    }
 </style>
 
 <div class="invoice-box">
@@ -28,12 +145,12 @@
     <table class="head">
         <tr>
             <td>
-                <img src="https://corescale.dev/logo-mark.png" alt="Corescale" class="logo">
-                <div class="muted">{{ doc.company }}</div>
+                <img src="https://corescale.dev/logo-full.png" alt="Corescale" class="logo" width="180" height="59">
             </td>
             <td class="title">
                 {{ _("Invoice") }}
-                <div class="muted" style="font-size:12px; font-weight:500; letter-spacing:0; text-transform:none;">{{ doc.name }}</div>
+                <div class="muted" style="font-size:12px; font-weight:500; letter-spacing:0; text-transform:none;">{{
+                    doc.name }}</div>
             </td>
         </tr>
     </table>
