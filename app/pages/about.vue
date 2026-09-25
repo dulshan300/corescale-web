@@ -45,7 +45,9 @@
         </p>
         <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
           <div v-for="expertise in expertiseList" :key="expertise.label" class="bg-white border border-dark-200 rounded-xl p-6">
-            <div class="text-2xl font-bold text-accent-500 mb-1">{{ expertise.years }}+</div>
+            <div class="text-2xl font-bold text-accent-500 mb-1">
+              {{ expertise.value }}+ <span class="text-sm font-medium text-dark-400">{{ expertise.unit }}</span>
+            </div>
             <div class="text-dark-900 font-medium text-sm mb-1">{{ expertise.label }}</div>
             <div class="text-dark-400 text-xs">{{ expertise.detail }}</div>
           </div>
@@ -81,9 +83,9 @@ const values = [
 ]
 
 const expertiseList = [
-  { years: 10, label: 'Web Development', detail: 'Vue, Next.js, Laravel, FastAPI' },
-  { years: 3, label: 'Custom AI Agents', detail: 'LLM integration, workflow automation' },
-  { years: 12, label: 'Enterprise Systems', detail: 'ERP, CRM, Custom Platforms' },
-  { years: 7, label: 'Security & Compliance', detail: 'SOC 2, GDPR, secure architecture' },
+  { value: 70, unit: 'projects', label: 'Web Development', detail: 'Vue, Next.js, Laravel, FastAPI' },
+  { value: 8, unit: 'projects', label: 'Custom AI Agents', detail: 'LLM integration, workflow automation' },
+  { value: 15, unit: 'projects', label: 'Enterprise Systems', detail: 'ERP, CRM, Custom Platforms' },
+  { value: 4, unit: 'years', label: 'Security & Compliance', detail: 'SOC 2, GDPR, secure architecture' },
 ]
 </script>

@@ -3,7 +3,7 @@
     .invoice-box table { width: 100%; border-collapse: collapse; }
     .invoice-box .head td { vertical-align: top; padding: 0; }
     .invoice-box .brand { font-size: 22px; font-weight: 700; color: #0f2a52; letter-spacing: -0.3px; }
-    .invoice-box .brand span { color: #1e9cd7; }
+    .invoice-box .logo { display: block; height: 44px; width: auto; margin-bottom: 4px; }
     .invoice-box .title { text-align: right; font-size: 24px; font-weight: 700; color: #1e9cd7; text-transform: uppercase; letter-spacing: 1px; }
     .invoice-box .muted { color: #868e96; }
     .invoice-box .rule { border: 0; border-top: 3px solid #0f2a52; margin: 14px 0 18px; }
@@ -28,7 +28,7 @@
     <table class="head">
         <tr>
             <td>
-                <div class="brand">Core<span>scale</span></div>
+                <img src="https://corescale.dev/logo-mark.png" alt="Corescale" class="logo">
                 <div class="muted">{{ doc.company }}</div>
             </td>
             <td class="title">

@@ -5,7 +5,12 @@
 </template>
 
 <script setup lang="ts">
+const route = useRoute()
+const canonical = computed(() => `https://corescale.dev${route.path === '/' ? '' : route.path.replace(/\/$/, '')}`)
+
 useHead({
+  link: [{ rel: 'canonical', href: () => canonical.value }],
+  meta: [{ property: 'og:url', content: () => canonical.value }],
   script: [
     {
       type: 'application/ld+json',
