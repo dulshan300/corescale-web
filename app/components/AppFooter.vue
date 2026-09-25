@@ -16,7 +16,7 @@
           <ul class="space-y-2">
             <li><NuxtLink to="/services" class="text-sm text-dark-500 hover:text-brand-900 transition-colors">Web Development</NuxtLink></li>
             <li><NuxtLink to="/services" class="text-sm text-dark-500 hover:text-brand-900 transition-colors">Solution Architecture</NuxtLink></li>
-            <li><NuxtLink to="/services" class="text-sm text-dark-500 hover:text-brand-900 transition-colors">Cloud Solutions</NuxtLink></li>
+            <li><NuxtLink to="/services" class="text-sm text-dark-500 hover:text-brand-900 transition-colors">Custom AI Agents</NuxtLink></li>
             <li><NuxtLink to="/services" class="text-sm text-dark-500 hover:text-brand-900 transition-colors">Digital Transformation</NuxtLink></li>
           </ul>
         </div>

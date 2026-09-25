@@ -129,7 +129,7 @@
 <script setup lang="ts">
 useSeoMeta({
   title: 'Contact | Corescale',
-  description: 'Get in touch with Corescale for enterprise web development and solution architecture services.',
+  description: 'Get in touch with Corescale for enterprise web development, solution architecture, and custom AI agent projects.',
 })
 
 const form = reactive({

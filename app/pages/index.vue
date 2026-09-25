@@ -145,8 +145,8 @@
 
 <script setup lang="ts">
 useSeoMeta({
-  title: 'Corescale | Enterprise Web Development & Solution Architecture',
-  description: 'Corescale delivers cutting-edge web development and solution architecture services that transform how businesses operate in the digital age.',
+  title: 'Corescale | Web Development, Solution Architecture & AI Agents',
+  description: 'Corescale builds custom web applications, enterprise architecture, and AI agents that automate corporate workflows for growing businesses.',
 })
 
 const stats = [
@@ -184,7 +184,7 @@ const points = [
 const technologies = [
   { name: 'React / Next.js', abbr: 'Re', category: 'Frontend' },
   { name: 'Node.js / Express', abbr: 'No', category: 'Backend' },
-  { name: 'AWS / Azure / GCP', abbr: 'Cl', category: 'Cloud' },
+  { name: 'OpenAI / Anthropic / LangChain', abbr: 'AI', category: 'AI Agents' },
   { name: 'PostgreSQL / MongoDB', abbr: 'DB', category: 'Database' },
   { name: 'Docker / Kubernetes', abbr: 'K8', category: 'Infrastructure' },
   { name: 'TypeScript', abbr: 'TS', category: 'Language' },

@@ -59,7 +59,7 @@
 <script setup lang="ts">
 useSeoMeta({
   title: 'Services | Corescale',
-  description: 'Enterprise web development, solution architecture, cloud infrastructure, and digital transformation services by Corescale.',
+  description: 'Web application development, solution architecture, custom AI agents, security, and digital transformation services by Corescale.',
 })
 
 const services = [

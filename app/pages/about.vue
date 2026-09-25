@@ -71,7 +71,7 @@
 <script setup lang="ts">
 useSeoMeta({
   title: 'About | Corescale',
-  description: 'Learn about Corescale - our mission, values, and expertise in enterprise web development and solution architecture.',
+  description: 'Learn about Corescale - our mission, values, and expertise in web development, solution architecture, and custom AI agents.',
 })
 
 const values = [
@@ -82,8 +82,8 @@ const values = [
 
 const expertiseList = [
   { years: 10, label: 'Web Development', detail: 'React, Vue, Next.js, Node.js' },
-  { years: 8, label: 'Cloud Architecture', detail: 'AWS, Azure, GCP' },
+  { years: 3, label: 'Custom AI Agents', detail: 'LLM integration, workflow automation' },
   { years: 12, label: 'Enterprise Systems', detail: 'ERP, CRM, Custom Platforms' },
-  { years: 6, label: 'DevOps & SRE', detail: 'CI/CD, Monitoring, Automation' },
+  { years: 7, label: 'Security & Compliance', detail: 'SOC 2, GDPR, secure architecture' },
 ]
 </script>
