@@ -73,8 +73,15 @@
                   placeholder="Tell us about your project..."
                 ></textarea>
               </div>
-              <button type="submit" class="btn-primary w-full" :disabled="submitted">
-                {{ submitted ? 'Message Sent!' : 'Send Message' }}
+              <div class="hidden" aria-hidden="true">
+                <label>Website <input v-model="form.website" type="text" tabindex="-1" autocomplete="off" /></label>
+              </div>
+              <p v-if="errorMessage" class="text-sm text-red-600" role="alert">{{ errorMessage }}</p>
+              <p v-if="submitted" class="text-sm text-green-700" role="status">
+                Thank you! Your message has been sent. We'll get back to you soon.
+              </p>
+              <button type="submit" class="btn-primary w-full" :disabled="sending">
+                {{ sending ? 'Sending...' : 'Send Message' }}
               </button>
             </form>
           </div>
@@ -138,19 +145,30 @@ const form = reactive({
   company: '',
   service: '',
   message: '',
+  website: '',
 })
 
 const submitted = ref(false)
+const sending = ref(false)
+const errorMessage = ref('')
 
-function handleSubmit() {
-  submitted.value = true
-  setTimeout(() => {
-    submitted.value = false
+async function handleSubmit() {
+  if (sending.value) return
+  sending.value = true
+  errorMessage.value = ''
+  try {
+    await $fetch('/api/contact', { method: 'POST', body: form })
+    submitted.value = true
     form.name = ''
     form.email = ''
     form.company = ''
     form.service = ''
     form.message = ''
-  }, 3000)
+    form.website = ''
+  } catch (err: any) {
+    errorMessage.value = err?.data?.statusMessage || 'Something went wrong. Please email info@corescale.dev instead.'
+  } finally {
+    sending.value = false
+  }
 }
 </script>

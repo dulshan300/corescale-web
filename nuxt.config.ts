@@ -19,11 +19,23 @@ export default defineNuxtConfig({
         { property: 'og:url', content: 'https://corescale.dev' },
         { property: 'og:image', content: 'https://corescale.dev/logo-full.png' },
         { name: 'twitter:card', content: 'summary' },
+        { name: 'theme-color', content: '#0f2a52' },
+        { name: 'apple-mobile-web-app-title', content: 'Corescale' },
       ],
       link: [
-        { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+        { rel: 'icon', type: 'image/png', href: '/favicon-96x96.png', sizes: '96x96' },
+        { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },
+        { rel: 'shortcut icon', href: '/favicon.ico' },
+        { rel: 'apple-touch-icon', sizes: '180x180', href: '/apple-touch-icon.png' },
+        { rel: 'manifest', href: '/site.webmanifest' },
       ],
     },
+  },
+
+  runtimeConfig: {
+    resendApiKey: '',
+    contactToEmail: 'info@corescale.dev',
+    contactFromEmail: 'Corescale Website <onboarding@resend.dev>',
   },
 
   css: ['~/assets/css/main.css'],
