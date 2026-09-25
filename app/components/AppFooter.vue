@@ -37,8 +37,8 @@
       <div class="border-t border-dark-200 mt-8 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
         <p class="text-dark-400 text-xs">&copy; {{ new Date().getFullYear() }} Corescale Pvt Ltd. All rights reserved.</p>
         <div class="flex items-center gap-4">
-          <a href="#" class="text-dark-400 hover:text-brand-900 transition-colors text-xs">Privacy Policy</a>
-          <a href="#" class="text-dark-400 hover:text-brand-900 transition-colors text-xs">Terms of Service</a>
+          <NuxtLink to="/privacy-policy" class="text-dark-400 hover:text-brand-900 transition-colors text-xs">Privacy Policy</NuxtLink>
+          <NuxtLink to="/terms-of-service" class="text-dark-400 hover:text-brand-900 transition-colors text-xs">Terms of Service</NuxtLink>
         </div>
       </div>
     </div>
