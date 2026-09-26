@@ -37,8 +37,9 @@
     </section>
 
     <!-- Team -->
-    <section class="section-padding bg-brand-50 border-y border-brand-100">
-      <div class="container-custom text-center">
+    <section class="relative overflow-hidden section-padding bg-brand-50 border-y border-brand-100">
+      <ClientOnly><HeroNetwork /></ClientOnly>
+      <div class="relative container-custom text-center">
         <h2 class="text-3xl font-bold mb-4 text-dark-900">Our Expertise</h2>
         <p class="text-dark-500 max-w-xl mx-auto mb-12">
           Deep technical knowledge across the full stack and across industries.
