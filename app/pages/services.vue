@@ -5,7 +5,7 @@
       <div class="container-custom">
         <h1 class="text-4xl md:text-5xl font-bold mb-4 text-dark-900">Our Services</h1>
         <p class="text-dark-500 text-lg max-w-2xl">
-          Comprehensive technology solutions tailored to your enterprise needs.
+          Practical technology that helps startups and growing businesses save time and get more done.
         </p>
       </div>
     </section>
@@ -168,7 +168,7 @@ const services = [
     pain: 'Not sure what to build, or worried about expensive mistakes?',
     description: 'We work with your team to turn your goals into a clear, practical plan. You get a simple blueprint, the right technology choices, and a roadmap that saves you from costly rework later.',
     features: [
-      'Enterprise architecture design',
+      'System architecture design',
       'Technical strategy & roadmapping',
       'System integration planning',
       'Technology stack evaluation',
@@ -183,9 +183,9 @@ const services = [
     description: 'We build AI agents that take over routine tasks like data entry, report preparation, and customer queries. They work with the systems you already use, run around the clock, and free your people for higher-value work.',
     features: [
       'Custom AI agent design & development',
-      'Corporate workflow & process automation',
+      'Business workflow & process automation',
       'LLM integration & orchestration',
-      'Enterprise system integrations (CRM, ERP, APIs)',
+      'Integrations with your tools (CRM, ERP, APIs)',
       'Human-in-the-loop oversight & monitoring',
     ],
   },

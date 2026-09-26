@@ -17,10 +17,10 @@
           <div>
             <h2 class="text-2xl md:text-3xl font-bold mb-6 text-dark-900">Our Mission</h2>
             <p class="text-dark-500 leading-relaxed mb-4">
-              Corescale was founded with a clear mission: to help enterprises navigate the complexity of modern technology and build solutions that drive real business outcomes.
+              Corescale was founded with a clear mission: to help startups and growing businesses use technology to save time, cut busywork, and grow without adding extra headcount.
             </p>
             <p class="text-dark-500 leading-relaxed mb-4">
-              We believe that great software starts with great architecture. By taking the time to understand your business, your users, and your technical constraints, we create solutions that are not just functional but truly transformative.
+              We believe that great software starts with great architecture. By taking the time to understand your business, your users, and your technical constraints, we create solutions that are not just functional but genuinely make your team more productive.
             </p>
             <p class="text-dark-500 leading-relaxed">
               As a Pvt Ltd company, we are committed to long-term partnerships with our clients, delivering consistent quality and building systems that stand the test of time.
@@ -85,5 +85,6 @@ const values = [
 const expertiseList = [
   { value: 70, unit: 'projects', label: 'Web Development', detail: 'Vue, Next.js, Laravel, FastAPI' },
   { value: 8, unit: 'projects', label: 'Custom AI Agents', detail: 'LLM integration, workflow automation' },
-  { value: 15, unit: 'projects', label: 'Enterprise Systems', detail: 'ERP, CRM, Custom Platforms' },]
+  { value: 15, unit: 'projects', label: 'Enterprise Systems', detail: 'ERP, CRM, Custom Platforms' },
+]
 </script>

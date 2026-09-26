@@ -7,7 +7,7 @@
             <img src="/logo-full.png" alt="Corescale" class="h-14 object-contain" />
           </div>
           <p class="text-dark-500 text-sm max-w-md">
-            Enterprise web development and solution architecture. Building scalable, robust digital solutions for modern businesses.
+            Custom web apps and AI agents that help startups and growing businesses save time and get more done.
           </p>
           <div class="flex items-center gap-3 mt-4">
             <a href="https://www.linkedin.com/company/corescale-dev" target="_blank" rel="noopener noreferrer" aria-label="Corescale on LinkedIn" class="w-9 h-9 bg-dark-100 rounded-lg flex items-center justify-center text-sm text-dark-500 hover:text-white hover:bg-brand-900 transition-colors">in</a>

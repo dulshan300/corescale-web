@@ -11,10 +11,10 @@ export default defineNuxtConfig({
       charset: 'utf-8',
       viewport: 'width=device-width, initial-scale=1',
       meta: [
-        { name: 'description', content: 'Corescale builds custom web applications, enterprise architecture, and AI agents that automate corporate workflows. Enterprise technology solutions that scale.' },
-        { name: 'keywords', content: 'enterprise web development, solution architecture, custom AI agents, AI automation, Laravel development, FastAPI development, Python, PHP, software development, digital transformation, Corescale' },
+        { name: 'description', content: 'Corescale builds custom web apps and AI agents that automate repetitive work, helping startups and growing businesses boost productivity.' },
+        { name: 'keywords', content: 'custom AI agents, AI automation for business, web development for startups, workflow automation, solution architecture, Laravel development, FastAPI development, Python, PHP, software development, digital transformation, Corescale' },
         { property: 'og:title', content: 'Corescale | Web Development, Solution Architecture & AI Agents' },
-        { property: 'og:description', content: 'Enterprise web development, solution architecture, and custom AI agent automation services.' },
+        { property: 'og:description', content: 'Custom web apps and AI agents that help startups and growing businesses save time and get more done.' },
         { property: 'og:type', content: 'website' },
         { property: 'og:url', content: 'https://corescale.dev' },
         { property: 'og:image', content: 'https://corescale.dev/og-image-new.jpeg' },

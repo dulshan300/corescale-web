@@ -8,14 +8,14 @@
         <div class="container-custom text-center">
           <div class="inline-flex items-center gap-2 bg-accent-50 border border-accent-200 rounded-full px-4 py-1.5 mb-8">
             <span class="w-2 h-2 bg-accent-500 rounded-full animate-pulse"></span>
-            <span class="text-accent-600 text-xs font-medium tracking-wide uppercase">Enterprise Solutions</span>
+            <span class="text-accent-600 text-xs font-medium tracking-wide uppercase">For Startups &amp; Growing Businesses</span>
           </div>
           <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6 tracking-tight text-dark-900">
-            Building the Future of<br />
-            <span class="text-gradient">Digital Enterprise</span>
+            Work Smarter, Grow Faster<br />
+            <span class="text-gradient">with AI &amp; Custom Software</span>
           </h1>
           <p class="text-dark-500 text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
-            Corescale delivers cutting-edge web development and solution architecture services that transform how businesses operate in the digital age.
+            Corescale builds custom web apps and AI agents that take repetitive work off your team, so startups and growing businesses can get more done with the people they already have.
           </p>
           <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
             <NuxtLink to="/services" class="btn-primary text-base">
@@ -64,9 +64,9 @@
       <div class="container-custom">
         <div class="text-center mb-16">
           <span class="text-accent-500 text-sm font-medium tracking-wide uppercase mb-3 block">What We Do</span>
-          <h2 class="text-3xl md:text-4xl font-bold mb-4 text-dark-900">Enterprise Solutions</h2>
+          <h2 class="text-3xl md:text-4xl font-bold mb-4 text-dark-900">Solutions That Save You Time</h2>
           <p class="text-dark-500 max-w-xl mx-auto">
-            End-to-end technology solutions designed to scale with your business.
+            Practical technology that removes busywork and helps your business grow without adding headcount.
           </p>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -131,9 +131,9 @@
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div>
             <span class="text-accent-500 text-sm font-medium tracking-wide uppercase mb-3 block">Why Corescale</span>
-            <h2 class="text-3xl md:text-4xl font-bold mb-6 text-dark-900">Enterprise Teams Trust Us</h2>
+            <h2 class="text-3xl md:text-4xl font-bold mb-6 text-dark-900">Why Growing Teams Choose Us</h2>
             <p class="text-dark-500 mb-8 leading-relaxed">
-              We combine deep technical expertise with business acumen to deliver solutions that drive real outcomes. Our architecture-first approach ensures your systems are built to last.
+              We pair strong technical skills with a practical business mindset. You get a small, responsive team that keeps things simple, respects your budget, and builds systems that grow with you.
             </p>
             <div class="space-y-5">
               <div v-for="point in points" :key="point.title" class="flex items-start gap-4">
@@ -176,9 +176,9 @@
       <ClientOnly><HeroNetwork dark /></ClientOnly>
       <div class="relative section-padding">
         <div class="container-custom text-center">
-          <h2 class="text-3xl md:text-4xl font-bold mb-4 text-white">Ready to Transform Your Business?</h2>
+          <h2 class="text-3xl md:text-4xl font-bold mb-4 text-white">Ready to Save Time and Grow Faster?</h2>
           <p class="text-brand-200 max-w-xl mx-auto mb-10">
-            Let's discuss how Corescale can help you build scalable, future-proof digital solutions.
+            Tell us where your team loses time each week. We'll show you what can be automated or built to fix it.
           </p>
           <NuxtLink to="/contact" class="btn-primary text-base inline-flex items-center gap-2">
             Start a Conversation
@@ -195,7 +195,7 @@
 <script setup lang="ts">
 useSeoMeta({
   title: 'Corescale | Web Development, Solution Architecture & AI Agents',
-  description: 'Corescale builds custom web applications, enterprise architecture, and AI agents that automate corporate workflows for growing businesses.',
+  description: 'Corescale builds custom web apps and AI agents that automate repetitive work, helping startups and growing businesses boost productivity.',
 })
 
 const stats = [
@@ -254,7 +254,7 @@ const steps = [
 
 const points = [
   { title: 'Architecture-First Approach', description: 'We design systems that scale with your business needs.' },
-  { title: 'Full-Stack Expertise', description: 'From frontend to infrastructure, we handle the complete technology stack.' },
+  { title: 'Full-Stack Expertise', description: 'From the screen your customers see to the systems behind it, we handle the whole stack.' },
   { title: 'Clear Communication', description: 'Regular updates in plain language, so you always know where your project stands.' },
   { title: 'Ongoing Partnership', description: 'We provide continued support and optimization after launch.' },
 ]
