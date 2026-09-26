@@ -18,10 +18,10 @@
         <div>
           <h3 class="font-semibold text-dark-900 mb-3 text-sm">Services</h3>
           <ul class="space-y-2">
-            <li><NuxtLink to="/services" class="text-sm text-dark-700 hover:text-brand-900 transition-colors">Web Development</NuxtLink></li>
-            <li><NuxtLink to="/services" class="text-sm text-dark-700 hover:text-brand-900 transition-colors">Solution Architecture</NuxtLink></li>
-            <li><NuxtLink to="/services" class="text-sm text-dark-700 hover:text-brand-900 transition-colors">Custom AI Agents</NuxtLink></li>
-            <li><NuxtLink to="/services" class="text-sm text-dark-700 hover:text-brand-900 transition-colors">Digital Transformation</NuxtLink></li>
+            <li><NuxtLink to="/services#web-development" class="text-sm text-dark-700 hover:text-brand-900 transition-colors">Web Development</NuxtLink></li>
+            <li><NuxtLink to="/services#solution-architecture" class="text-sm text-dark-700 hover:text-brand-900 transition-colors">Solution Architecture</NuxtLink></li>
+            <li><NuxtLink to="/services#ai-agents" class="text-sm text-dark-700 hover:text-brand-900 transition-colors">Custom AI Agents</NuxtLink></li>
+            <li><NuxtLink to="/services#digital-transformation" class="text-sm text-dark-700 hover:text-brand-900 transition-colors">Digital Transformation</NuxtLink></li>
           </ul>
         </div>
 

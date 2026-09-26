@@ -3,7 +3,7 @@
     <!-- Hero -->
     <section class="bg-gradient-to-b from-brand-50 to-white section-padding pt-32 pb-16">
       <div class="container-custom">
-        <h1 class="text-4xl md:text-5xl font-bold mb-4 text-dark-900">Our Services</h1>
+        <h1 class="text-4xl md:text-5xl font-bold mb-4 text-dark-900">Web Development &amp; AI Agent Services</h1>
         <p class="text-dark-500 text-lg max-w-2xl">
           Practical technology that helps startups and growing businesses save time and get more done.
         </p>
@@ -15,8 +15,9 @@
       <div class="container-custom space-y-16">
         <div
           v-for="(service, index) in services"
+          :id="service.slug"
           :key="service.title"
-          class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
+          class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center scroll-mt-28"
           :class="{ 'lg:flex-row-reverse': index % 2 === 1 }"
         >
           <div :class="{ 'lg:order-2': index % 2 === 1 }">
@@ -85,8 +86,8 @@
 
 <script setup lang="ts">
 useSeoMeta({
-  title: 'Services | Corescale',
-  description: 'Web application development, solution architecture, custom AI agents, and digital transformation services by Corescale.',
+  title: 'Web Development & AI Agent Services | Corescale',
+  description: 'Web app development, solution architecture, custom AI agents, and digital transformation that help startups and growing businesses save time.',
 })
 
 const faqs = [
@@ -147,6 +148,7 @@ useHead({
 
 const services = [
   {
+    slug: 'web-development',
     illustration: 'web' as const,
     tag: 'Development',
     title: 'Web Application Development',
@@ -162,6 +164,7 @@ const services = [
     ],
   },
   {
+    slug: 'solution-architecture',
     illustration: 'architecture' as const,
     tag: 'Architecture',
     title: 'Solution Architecture & Consulting',
@@ -176,6 +179,7 @@ const services = [
     ],
   },
   {
+    slug: 'ai-agents',
     illustration: 'ai' as const,
     tag: 'Automation',
     title: 'Custom AI Agents',
@@ -190,6 +194,7 @@ const services = [
     ],
   },
   {
+    slug: 'digital-transformation',
     illustration: 'transformation' as const,
     tag: 'Digital',
     title: 'Digital Transformation',

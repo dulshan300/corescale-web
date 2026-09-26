@@ -64,16 +64,17 @@
       <div class="container-custom">
         <div class="text-center mb-16">
           <span class="text-accent-700 text-sm font-medium tracking-wide uppercase mb-3 block">What We Do</span>
-          <h2 class="text-3xl md:text-4xl font-bold mb-4 text-dark-900">Solutions That Save You Time</h2>
+          <h2 class="text-3xl md:text-4xl font-bold mb-4 text-dark-900">AI Agents &amp; Custom Software That Save You Time</h2>
           <p class="text-dark-500 max-w-xl mx-auto">
             Practical technology that removes busywork and helps your business grow without adding headcount.
           </p>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div
+          <NuxtLink
             v-for="service in services"
             :key="service.title"
-            class="group relative bg-white border border-dark-200 rounded-2xl p-8 hover:border-accent-500/30 hover:shadow-xl hover:shadow-accent-500/5 transition-all duration-300"
+            :to="`/services#${service.slug}`"
+            class="group relative block bg-white border border-dark-200 rounded-2xl p-8 hover:border-accent-500/30 hover:shadow-xl hover:shadow-accent-500/5 transition-all duration-300"
           >
             <div class="w-14 h-14 bg-gradient-to-br from-brand-900 to-accent-500 text-white rounded-xl flex items-center justify-center mb-6 shadow-lg shadow-accent-500/20 group-hover:scale-105 transition-transform">
               <component :is="service.icon" class="w-7 h-7" :stroke-width="1.75" />
@@ -86,7 +87,7 @@
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>
             </div>
-          </div>
+          </NuxtLink>
         </div>
         <div class="text-center mt-12">
           <NuxtLink to="/services" class="btn-secondary inline-flex items-center gap-2">
@@ -164,7 +165,7 @@
                   </svg>
                 </div>
                 <div>
-                  <h4 class="font-semibold text-dark-900 mb-1">{{ point.title }}</h4>
+                  <h3 class="font-semibold text-dark-900 mb-1">{{ point.title }}</h3>
                   <p class="text-dark-500 text-sm">{{ point.description }}</p>
                 </div>
               </div>
@@ -231,7 +232,7 @@ import { Code2, Network, Bot, Search, ClipboardList, Hammer, Rocket, HeartHandsh
 
 
 useSeoMeta({
-  title: 'Corescale | Web Development, Solution Architecture & AI Agents',
+  title: 'Custom Web Apps & AI Agents for Startups | Corescale',
   description: 'Corescale builds custom web apps and AI agents that automate repetitive work, helping startups and growing businesses boost productivity.',
 })
 
@@ -263,18 +264,21 @@ const platforms = [
 
 const services = [
   {
+    slug: 'web-development',
     icon: Code2,
     pain: 'Software that is slow or hard to change?',
     title: 'Web Development That Fits Your Business',
     description: 'We build fast, reliable web platforms around the way you work, so customers get a smooth experience and your team stops fighting its tools.',
   },
   {
+    slug: 'solution-architecture',
     icon: Network,
     pain: 'Unsure what to build, or afraid of costly mistakes?',
     title: 'A Clear Plan Before You Build',
     description: 'We turn your goals into a simple, proven blueprint, so you invest once, avoid rework, and can grow with confidence.',
   },
   {
+    slug: 'ai-agents',
     icon: Bot,
     pain: 'Your team loses hours to repetitive admin work?',
     title: 'Automate the Busywork with AI Agents',

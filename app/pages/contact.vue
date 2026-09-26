@@ -91,7 +91,7 @@
           <!-- Contact Info -->
           <div class="space-y-8">
             <div>
-              <h3 class="font-semibold text-dark-900 mb-3">Contact Information</h3>
+              <h2 class="font-semibold text-dark-900 mb-3">Contact Information</h2>
               <div class="space-y-4 text-sm">
                 <div class="flex items-center gap-3 text-dark-700">
                   <span class="w-9 h-9 bg-brand-50 border border-brand-100 rounded-lg flex items-center justify-center text-accent-500 flex-shrink-0"><Mail class="w-4 h-4" :stroke-width="2" /></span>
@@ -109,7 +109,7 @@
             </div>
 
             <div>
-              <h3 class="font-semibold text-dark-900 mb-3">Business Hours <span class="text-dark-400 text-xs font-normal">(Sri Lanka time, GMT+5:30)</span></h3>
+              <h2 class="font-semibold text-dark-900 mb-3">Business Hours <span class="text-dark-400 text-xs font-normal">(Sri Lanka time, GMT+5:30)</span></h2>
               <div class="space-y-2 text-sm text-dark-600">
                 <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
                 <p>Saturday: 10:00 AM - 2:00 PM</p>
@@ -118,7 +118,7 @@
             </div>
 
             <div>
-              <h3 class="font-semibold text-dark-900 mb-3">Follow Us</h3>
+              <h2 class="font-semibold text-dark-900 mb-3">Follow Us</h2>
               <div class="flex items-center gap-4">
                 <a href="https://www.linkedin.com/company/corescale-dev" target="_blank" rel="noopener noreferrer" aria-label="Corescale on LinkedIn" class="w-10 h-10 bg-brand-50 border border-brand-100 rounded-lg flex items-center justify-center text-brand-900 hover:text-white hover:bg-brand-900 transition-colors">
                   <Linkedin class="w-5 h-5" :stroke-width="1.75" />
@@ -139,8 +139,8 @@
 import { Mail, Phone, MapPin, Linkedin, Facebook, ChevronDown } from 'lucide-vue-next'
 
 useSeoMeta({
-  title: 'Contact | Corescale',
-  description: 'Get in touch with Corescale to talk about custom web apps, AI agents, and ways to save your team time.',
+  title: 'Contact Corescale | Start Your Web or AI Agent Project',
+  description: 'Talk to Corescale about custom web apps, AI agents, and ways to save your team time. Send a message, email, or call, and we will reply soon.',
 })
 
 const form = reactive({

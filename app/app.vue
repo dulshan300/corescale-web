@@ -18,6 +18,7 @@ useHead({
         '@context': 'https://schema.org',
         '@type': 'Organization',
         name: 'Corescale',
+        description: 'Corescale builds custom web apps and AI agents that automate repetitive work for startups and growing businesses.',
         url: 'https://corescale.dev',
         logo: 'https://corescale.dev/logo-full.png',
         email: 'info@corescale.dev',

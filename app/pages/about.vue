@@ -128,7 +128,7 @@
 import { Code2, Bot, Building2 } from 'lucide-vue-next'
 
 useSeoMeta({
-  title: 'About | Corescale',
+  title: 'About Corescale | Web & AI Development from Sri Lanka',
   description: 'Learn about Corescale - our mission, values, and expertise in web development, solution architecture, and custom AI agents.',
 })
 

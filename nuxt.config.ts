@@ -7,13 +7,14 @@ export default defineNuxtConfig({
 
   app: {
     head: {
-      title: 'Corescale | Web Development, Solution Architecture & AI Agents',
+      htmlAttrs: { lang: 'en' },
+      title: 'Custom Web Apps & AI Agents for Startups | Corescale',
       charset: 'utf-8',
       viewport: 'width=device-width, initial-scale=1',
       meta: [
         { name: 'description', content: 'Corescale builds custom web apps and AI agents that automate repetitive work, helping startups and growing businesses boost productivity.' },
         { name: 'keywords', content: 'custom AI agents, AI automation for business, web development for startups, workflow automation, solution architecture, Laravel development, FastAPI development, Python, PHP, software development, digital transformation, Corescale' },
-        { property: 'og:title', content: 'Corescale | Web Development, Solution Architecture & AI Agents' },
+        { property: 'og:title', content: 'Custom Web Apps & AI Agents for Startups | Corescale' },
         { property: 'og:description', content: 'Custom web apps and AI agents that help startups and growing businesses save time and get more done.' },
         { property: 'og:type', content: 'website' },
         { property: 'og:url', content: 'https://corescale.dev' },
