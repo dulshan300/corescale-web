@@ -170,19 +170,32 @@
               </div>
             </div>
           </div>
-          <div class="relative">
+          <div class="relative min-w-0">
             <div class="absolute inset-0 bg-accent-500/5 rounded-3xl blur-3xl"></div>
-            <div class="relative bg-white border border-dark-200 rounded-2xl p-8">
-              <h3 class="text-sm font-medium text-dark-400 mb-6 uppercase tracking-wide">Tech Stack</h3>
-              <div class="grid grid-cols-2 gap-4">
-                <div v-for="tech in technologies" :key="tech.name" class="flex items-center gap-3 bg-brand-50 rounded-xl p-3 border border-brand-100">
-                  <div class="w-10 h-10 bg-white rounded-lg flex items-center justify-center flex-shrink-0">
-                    <span class="text-brand-600 font-mono text-sm font-medium">{{ tech.abbr }}</span>
+            <div class="relative bg-white border border-brand-100 rounded-3xl p-6 sm:p-8 shadow-xl shadow-brand-900/5">
+              <h3 class="font-semibold text-dark-900 text-lg">Our Tech Stack</h3>
+              <p class="text-dark-500 text-sm mt-1">Modern, proven tools, chosen to fit your project.</p>
+              <div class="mt-4 divide-y divide-brand-100">
+                <div
+                  v-for="group in techGroups"
+                  :key="group.title"
+                  class="py-4 last:pb-0 flex flex-col sm:flex-row sm:items-start gap-3 sm:gap-5"
+                >
+                  <div class="flex items-center gap-3 sm:w-36 flex-shrink-0">
+                    <span class="w-9 h-9 rounded-lg bg-gradient-to-br from-brand-900 to-accent-500 text-white flex items-center justify-center flex-shrink-0">
+                      <component :is="group.icon" class="w-[18px] h-[18px]" :stroke-width="1.75" />
+                    </span>
+                    <span class="text-sm font-semibold text-dark-900">{{ group.title }}</span>
                   </div>
-                  <div>
-                    <h4 class="font-medium text-dark-900 text-sm">{{ tech.name }}</h4>
-                    <p class="text-dark-400 text-xs">{{ tech.category }}</p>
-                  </div>
+                  <ul class="flex flex-wrap gap-2 min-w-0">
+                    <li
+                      v-for="item in group.items"
+                      :key="item"
+                      class="px-3 py-1.5 rounded-full bg-brand-50 border border-brand-100 text-sm text-dark-800"
+                    >
+                      {{ item }}
+                    </li>
+                  </ul>
                 </div>
               </div>
             </div>
@@ -214,7 +227,7 @@
 </template>
 
 <script setup lang="ts">
-import { Code2, Network, Bot, Search, ClipboardList, Hammer, Rocket, HeartHandshake } from 'lucide-vue-next'
+import { Code2, Network, Bot, Search, ClipboardList, Hammer, Rocket, HeartHandshake, Monitor, Server, Database, Wrench } from 'lucide-vue-next'
 
 
 useSeoMeta({
@@ -301,14 +314,11 @@ const points = [
   { title: 'Ongoing Partnership', description: 'We provide continued support and optimization after launch.' },
 ]
 
-const technologies = [
-  { name: 'React / Next.js', abbr: 'Re', category: 'Frontend' },
-  { name: 'Python / FastAPI', abbr: 'Py', category: 'Backend' },
-  { name: 'PHP / Laravel', abbr: 'PH', category: 'Backend' },
-  { name: 'Node.js / Express', abbr: 'No', category: 'Backend' },
-  { name: 'OpenAI / Anthropic / LangChain', abbr: 'AI', category: 'AI Agents' },
-  { name: 'PostgreSQL / MongoDB', abbr: 'DB', category: 'Database' },
-  { name: 'Docker / Kubernetes', abbr: 'K8', category: 'Infrastructure' },
-  { name: 'TypeScript', abbr: 'TS', category: 'Language' },
+const techGroups = [
+  { title: 'Frontend', icon: Monitor, items: ['Vue.js', 'React', 'Next.js', 'TypeScript'] },
+  { title: 'Backend', icon: Server, items: ['Laravel (PHP)', 'FastAPI (Python)', 'Node.js', 'Express'] },
+  { title: 'AI Agents', icon: Bot, items: ['OpenAI', 'Anthropic', 'LangChain'] },
+  { title: 'Data', icon: Database, items: ['PostgreSQL', 'MongoDB'] },
+  { title: 'Tools', icon: Wrench, items: ['Docker', 'Kubernetes'] },
 ]
 </script>

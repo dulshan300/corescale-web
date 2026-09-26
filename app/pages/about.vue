@@ -39,19 +39,43 @@
     <!-- Team -->
     <section class="relative overflow-hidden section-padding bg-brand-50 border-y border-brand-100">
       <ClientOnly><HeroNetwork /></ClientOnly>
-      <div class="relative container-custom text-center">
-        <h2 class="text-3xl font-bold mb-4 text-dark-900">Our Expertise</h2>
-        <p class="text-dark-500 max-w-xl mx-auto mb-12">
-          Deep technical knowledge across the full stack and across industries.
-        </p>
-        <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
-          <div v-for="expertise in expertiseList" :key="expertise.label" class="bg-white border border-dark-200 rounded-xl p-6">
-            <div class="text-2xl font-bold text-accent-500 mb-1">
-              {{ expertise.value }}+ <span class="text-sm font-medium text-dark-400">{{ expertise.unit }}</span>
+      <div class="relative container-custom">
+        <div class="text-center mb-12">
+          <span class="text-accent-500 text-sm font-medium tracking-wide uppercase mb-3 block">What We Have Built</span>
+          <h2 class="text-3xl md:text-4xl font-bold mb-4 text-dark-900">Our Expertise</h2>
+          <p class="text-dark-500 max-w-xl mx-auto">
+            Hands-on experience in the areas that help startups and growing businesses the most.
+          </p>
+        </div>
+        <div ref="expertiseRef" class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          <article
+            v-for="(expertise, index) in expertiseList"
+            :key="expertise.label"
+            class="group relative overflow-hidden bg-white border border-brand-100 rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-brand-900/10"
+          >
+            <div class="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-brand-900 to-accent-500"></div>
+            <component :is="expertise.icon" class="absolute -right-4 -bottom-4 w-32 h-32 text-brand-900 opacity-[0.04] group-hover:opacity-[0.07] transition-opacity" :stroke-width="1.25" />
+            <div class="relative">
+              <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-brand-900 to-accent-500 text-white flex items-center justify-center shadow-lg shadow-accent-500/20">
+                <component :is="expertise.icon" class="w-6 h-6" :stroke-width="1.75" />
+              </div>
+              <div class="mt-6 flex items-baseline gap-2">
+                <span class="text-5xl font-bold text-brand-900 tabular-nums">{{ counts[index] }}+</span>
+                <span class="text-sm font-medium text-dark-500">{{ expertise.unit }}</span>
+              </div>
+              <h3 class="mt-2 text-lg font-semibold text-dark-900">{{ expertise.label }}</h3>
+              <p class="mt-2 text-sm text-dark-600 leading-relaxed">{{ expertise.blurb }}</p>
+              <ul class="mt-5 flex flex-wrap gap-2">
+                <li
+                  v-for="tag in expertise.tags"
+                  :key="tag"
+                  class="px-3 py-1 rounded-full bg-brand-50 border border-brand-100 text-xs text-dark-800"
+                >
+                  {{ tag }}
+                </li>
+              </ul>
             </div>
-            <div class="text-dark-900 font-medium text-sm mb-1">{{ expertise.label }}</div>
-            <div class="text-dark-400 text-xs">{{ expertise.detail }}</div>
-          </div>
+          </article>
         </div>
       </div>
     </section>
@@ -101,6 +125,8 @@
 </template>
 
 <script setup lang="ts">
+import { Code2, Bot, Building2 } from 'lucide-vue-next'
+
 useSeoMeta({
   title: 'About | Corescale',
   description: 'Learn about Corescale - our mission, values, and expertise in web development, solution architecture, and custom AI agents.',
@@ -145,8 +171,51 @@ const values = [
 ]
 
 const expertiseList = [
-  { value: 70, unit: 'projects', label: 'Web Development', detail: 'Vue, Next.js, Laravel, FastAPI' },
-  { value: 8, unit: 'projects', label: 'Custom AI Agents', detail: 'LLM integration, workflow automation' },
-  { value: 15, unit: 'projects', label: 'Enterprise Systems', detail: 'ERP, CRM, Custom Platforms' },
+  {
+    icon: Code2,
+    value: 70,
+    unit: 'projects',
+    label: 'Web Development',
+    blurb: 'Websites, portals, and web apps built to grow with your business.',
+    tags: ['Vue', 'Next.js', 'Laravel', 'FastAPI'],
+  },
+  {
+    icon: Bot,
+    value: 8,
+    unit: 'projects',
+    label: 'Custom AI Agents',
+    blurb: 'Agents that take repetitive work off your team, around the clock.',
+    tags: ['LLM integration', 'Workflow automation'],
+  },
+  {
+    icon: Building2,
+    value: 15,
+    unit: 'projects',
+    label: 'Enterprise Systems',
+    blurb: 'Business systems that connect your teams, tools, and data.',
+    tags: ['ERP', 'CRM', 'Custom platforms'],
+  },
 ]
+
+const expertiseRef = ref<HTMLElement | null>(null)
+const counts = ref(expertiseList.map((item) => item.value))
+
+onMounted(() => {
+  if (!expertiseRef.value || !('IntersectionObserver' in window)) return
+  counts.value = expertiseList.map(() => 0)
+  const observer = new IntersectionObserver(([entry]) => {
+    if (!entry?.isIntersecting) return
+    observer.disconnect()
+    const duration = 1400
+    const start = performance.now()
+    const tick = (now: number) => {
+      const progress = Math.min((now - start) / duration, 1)
+      const eased = 1 - Math.pow(1 - progress, 3)
+      counts.value = expertiseList.map((item) => Math.round(item.value * eased))
+      if (progress < 1) requestAnimationFrame(tick)
+    }
+    requestAnimationFrame(tick)
+  }, { threshold: 0.3 })
+  observer.observe(expertiseRef.value)
+})
 </script>

@@ -50,9 +50,10 @@
               </div>
               <div>
                 <label class="block text-sm font-medium text-dark-700 mb-2">Service Interest</label>
+                <div class="relative">
                 <select
                   v-model="form.service"
-                  class="w-full bg-white border border-dark-300 rounded-lg px-4 py-3 text-dark-900 text-sm focus:outline-none focus:border-accent-500 focus:ring-1 focus:ring-accent-500 transition-colors"
+                  class="w-full appearance-none bg-white border border-dark-300 rounded-lg pl-4 pr-11 py-3 text-dark-900 text-sm focus:outline-none focus:border-accent-500 focus:ring-1 focus:ring-accent-500 transition-colors"
                 >
                   <option value="">Select a service</option>
                   <option value="web-development">Web Development</option>
@@ -61,6 +62,8 @@
                   <option value="digital-transformation">Digital Transformation</option>
                   <option value="other">Other</option>
                 </select>
+                <ChevronDown class="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 w-4 h-4 text-dark-700" :stroke-width="2.25" />
+                </div>
               </div>
               <div>
                 <label class="block text-sm font-medium text-dark-700 mb-2">Message</label>
@@ -133,7 +136,7 @@
 </template>
 
 <script setup lang="ts">
-import { Mail, Phone, MapPin, Linkedin, Facebook } from 'lucide-vue-next'
+import { Mail, Phone, MapPin, Linkedin, Facebook, ChevronDown } from 'lucide-vue-next'
 
 useSeoMeta({
   title: 'Contact | Corescale',
