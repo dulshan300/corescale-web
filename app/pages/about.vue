@@ -27,7 +27,7 @@
             </p>
           </div>
           <div class="space-y-6">
-            <div v-for="value in values" :key="value.title" class="bg-dark-50 border border-dark-200 rounded-xl p-6">
+            <div v-for="value in values" :key="value.title" class="bg-brand-50 border border-brand-100 rounded-xl p-6">
               <h3 class="font-semibold text-dark-900 mb-2">{{ value.title }}</h3>
               <p class="text-dark-500 text-sm leading-relaxed">{{ value.description }}</p>
             </div>
@@ -37,7 +37,7 @@
     </section>
 
     <!-- Team -->
-    <section class="section-padding bg-dark-50 border-y border-dark-200">
+    <section class="section-padding bg-brand-50 border-y border-brand-100">
       <div class="container-custom text-center">
         <h2 class="text-3xl font-bold mb-4 text-dark-900">Our Expertise</h2>
         <p class="text-dark-500 max-w-xl mx-auto mb-12">

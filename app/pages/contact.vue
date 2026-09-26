@@ -16,7 +16,7 @@
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
           <!-- Form -->
           <div class="lg:col-span-2">
-            <form class="bg-dark-50 border border-dark-200 rounded-2xl p-8 space-y-6" @submit.prevent="handleSubmit">
+            <form class="bg-brand-50 border border-brand-100 rounded-2xl p-8 space-y-6" @submit.prevent="handleSubmit">
               <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                   <label class="block text-sm font-medium text-dark-700 mb-2">Name</label>
@@ -90,16 +90,16 @@
             <div>
               <h3 class="font-semibold text-dark-900 mb-3">Contact Information</h3>
               <div class="space-y-4 text-sm">
-                <div class="flex items-center gap-3 text-dark-600">
-                  <span class="text-accent-500">📧</span>
-                  <span>info@corescale.dev</span>
+                <div class="flex items-center gap-3 text-dark-700">
+                  <span class="w-9 h-9 bg-brand-50 border border-brand-100 rounded-lg flex items-center justify-center text-accent-500 flex-shrink-0"><Mail class="w-4 h-4" :stroke-width="2" /></span>
+                  <a href="mailto:info@corescale.dev" class="hover:text-brand-900 transition-colors">info@corescale.dev</a>
                 </div>
-                <div class="flex items-center gap-3 text-dark-600">
-                  <span class="text-accent-500">📞</span>
+                <div class="flex items-center gap-3 text-dark-700">
+                  <span class="w-9 h-9 bg-brand-50 border border-brand-100 rounded-lg flex items-center justify-center text-accent-500 flex-shrink-0"><Phone class="w-4 h-4" :stroke-width="2" /></span>
                   <a href="tel:+94727433525" class="hover:text-brand-900 transition-colors">+94 72 743 3525</a>
                 </div>
-                <div class="flex items-center gap-3 text-dark-600">
-                  <span class="text-accent-500">📍</span>
+                <div class="flex items-center gap-3 text-dark-700">
+                  <span class="w-9 h-9 bg-brand-50 border border-brand-100 rounded-lg flex items-center justify-center text-accent-500 flex-shrink-0"><MapPin class="w-4 h-4" :stroke-width="2" /></span>
                   <span>Sri Lanka · Working with clients worldwide</span>
                 </div>
               </div>
@@ -117,11 +117,11 @@
             <div>
               <h3 class="font-semibold text-dark-900 mb-3">Follow Us</h3>
               <div class="flex items-center gap-4">
-                <a href="https://www.linkedin.com/company/corescale-dev" target="_blank" rel="noopener noreferrer" aria-label="Corescale on LinkedIn" class="w-10 h-10 bg-dark-100 rounded-lg flex items-center justify-center text-dark-500 hover:text-white hover:bg-brand-900 transition-colors">
-                  in
+                <a href="https://www.linkedin.com/company/corescale-dev" target="_blank" rel="noopener noreferrer" aria-label="Corescale on LinkedIn" class="w-10 h-10 bg-brand-50 border border-brand-100 rounded-lg flex items-center justify-center text-brand-900 hover:text-white hover:bg-brand-900 transition-colors">
+                  <Linkedin class="w-5 h-5" :stroke-width="1.75" />
                 </a>
-                <a href="https://www.facebook.com/corescale.dev" target="_blank" rel="noopener noreferrer" aria-label="Corescale on Facebook" class="w-10 h-10 bg-dark-100 rounded-lg flex items-center justify-center text-dark-500 hover:text-white hover:bg-brand-900 transition-colors">
-                  f
+                <a href="https://www.facebook.com/corescale.dev" target="_blank" rel="noopener noreferrer" aria-label="Corescale on Facebook" class="w-10 h-10 bg-brand-50 border border-brand-100 rounded-lg flex items-center justify-center text-brand-900 hover:text-white hover:bg-brand-900 transition-colors">
+                  <Facebook class="w-5 h-5" :stroke-width="1.75" />
                 </a>
               </div>
             </div>
@@ -133,6 +133,8 @@
 </template>
 
 <script setup lang="ts">
+import { Mail, Phone, MapPin, Linkedin, Facebook } from 'lucide-vue-next'
+
 useSeoMeta({
   title: 'Contact | Corescale',
   description: 'Get in touch with Corescale to talk about custom web apps, AI agents, and ways to save your team time.',

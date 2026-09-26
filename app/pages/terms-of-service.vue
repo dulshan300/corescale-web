@@ -19,7 +19,7 @@
           </ul>
         </div>
 
-        <div class="bg-dark-50 border border-dark-200 rounded-2xl p-6">
+        <div class="bg-brand-50 border border-brand-100 rounded-2xl p-6">
           <h2 class="text-xl font-bold mb-2 text-dark-900">Questions about these terms?</h2>
           <p class="text-dark-500">
             Email us at

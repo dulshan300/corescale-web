@@ -35,15 +35,19 @@
               </li>
             </ul>
           </div>
-          <div :class="{ 'lg:order-1': index % 2 === 1 }" class="bg-dark-50 border border-dark-200 rounded-2xl p-8 h-64 flex items-center justify-center">
-            <span class="text-6xl">{{ service.icon }}</span>
+          <div :class="{ 'lg:order-1': index % 2 === 1 }" class="relative overflow-hidden bg-gradient-to-br from-brand-50 to-accent-50 border border-brand-100 rounded-2xl p-8 h-64 flex items-center justify-center">
+            <div class="absolute -right-10 -top-10 w-44 h-44 rounded-full bg-accent-500/10"></div>
+            <div class="absolute -left-12 -bottom-12 w-52 h-52 rounded-full bg-brand-900/5"></div>
+            <div class="relative w-28 h-28 bg-gradient-to-br from-brand-900 to-accent-500 text-white rounded-3xl flex items-center justify-center shadow-xl shadow-accent-500/25">
+              <component :is="service.icon" class="w-14 h-14" :stroke-width="1.5" />
+            </div>
           </div>
         </div>
       </div>
     </section>
 
     <!-- FAQ -->
-    <section class="section-padding bg-dark-50 border-y border-dark-200">
+    <section class="section-padding bg-brand-50 border-y border-brand-100">
       <div class="container-custom max-w-3xl">
         <div class="text-center mb-12">
           <span class="text-accent-500 text-sm font-medium tracking-wide uppercase mb-3 block">FAQ</span>
@@ -84,6 +88,8 @@
 </template>
 
 <script setup lang="ts">
+import { Code2, Network, Bot, Rocket } from 'lucide-vue-next'
+
 useSeoMeta({
   title: 'Services | Corescale',
   description: 'Web application development, solution architecture, custom AI agents, and digital transformation services by Corescale.',
@@ -147,7 +153,7 @@ useHead({
 
 const services = [
   {
-    icon: '⚡',
+    icon: Code2,
     tag: 'Development',
     title: 'Web Application Development',
     pain: 'Is your software slow, hard to change, or a poor fit for how you work?',
@@ -162,7 +168,7 @@ const services = [
     ],
   },
   {
-    icon: '🏗️',
+    icon: Network,
     tag: 'Architecture',
     title: 'Solution Architecture & Consulting',
     pain: 'Not sure what to build, or worried about expensive mistakes?',
@@ -176,7 +182,7 @@ const services = [
     ],
   },
   {
-    icon: '🤖',
+    icon: Bot,
     tag: 'Automation',
     title: 'Custom AI Agents',
     pain: 'Is your team losing hours every week to repetitive admin work?',
@@ -190,7 +196,7 @@ const services = [
     ],
   },
   {
-    icon: '📱',
+    icon: Rocket,
     tag: 'Digital',
     title: 'Digital Transformation',
     pain: 'Stuck with old systems, spreadsheets, and manual processes?',

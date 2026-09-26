@@ -47,7 +47,7 @@
           <span
             v-for="platform in platforms"
             :key="platform.name"
-            class="flex items-center gap-2.5 px-6 h-14 bg-dark-50 border border-dark-200 rounded-lg text-brand-900 hover:text-accent-500 hover:border-accent-500/30 transition-colors"
+            class="flex items-center gap-2.5 px-6 h-14 bg-brand-50 border border-brand-100 rounded-lg text-brand-900 hover:text-accent-500 hover:border-accent-500/30 transition-colors"
           >
             <svg :viewBox="platform.viewBox" :class="platform.class" fill="currentColor" role="img" :aria-label="platform.name">
               <path :d="platform.path" />
@@ -60,7 +60,7 @@
     </section>
 
     <!-- Services Overview -->
-    <section class="section-padding bg-dark-50">
+    <section class="section-padding bg-brand-50">
       <div class="container-custom">
         <div class="text-center mb-16">
           <span class="text-accent-500 text-sm font-medium tracking-wide uppercase mb-3 block">What We Do</span>
@@ -75,8 +75,8 @@
             :key="service.title"
             class="group relative bg-white border border-dark-200 rounded-2xl p-8 hover:border-accent-500/30 hover:shadow-xl hover:shadow-accent-500/5 transition-all duration-300"
           >
-            <div class="w-14 h-14 bg-brand-50 rounded-xl flex items-center justify-center mb-6 group-hover:bg-accent-50 transition-colors">
-              <span class="text-2xl">{{ service.icon }}</span>
+            <div class="w-14 h-14 bg-gradient-to-br from-brand-900 to-accent-500 text-white rounded-xl flex items-center justify-center mb-6 shadow-lg shadow-accent-500/20 group-hover:scale-105 transition-transform">
+              <component :is="service.icon" class="w-7 h-7" :stroke-width="1.75" />
             </div>
             <p class="text-accent-600 text-sm font-medium mb-2">{{ service.pain }}</p>
             <h3 class="text-xl font-semibold mb-3 text-dark-900">{{ service.title }}</h3>
@@ -113,7 +113,7 @@
           <li
             v-for="(step, index) in steps"
             :key="step.title"
-            class="relative bg-dark-50 border border-dark-200 rounded-2xl p-6"
+            class="relative bg-brand-50 border border-brand-100 rounded-2xl p-6"
           >
             <div class="w-10 h-10 bg-brand-900 text-white rounded-full flex items-center justify-center font-bold mb-4">
               {{ index + 1 }}
@@ -126,7 +126,7 @@
     </section>
 
     <!-- Why Choose Us -->
-    <section class="section-padding bg-dark-50">
+    <section class="section-padding bg-brand-50">
       <div class="container-custom">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div>
@@ -154,8 +154,8 @@
             <div class="relative bg-white border border-dark-200 rounded-2xl p-8">
               <h3 class="text-sm font-medium text-dark-400 mb-6 uppercase tracking-wide">Tech Stack</h3>
               <div class="grid grid-cols-2 gap-4">
-                <div v-for="tech in technologies" :key="tech.name" class="flex items-center gap-3 bg-dark-50 rounded-xl p-3 border border-dark-100">
-                  <div class="w-10 h-10 bg-brand-50 rounded-lg flex items-center justify-center flex-shrink-0">
+                <div v-for="tech in technologies" :key="tech.name" class="flex items-center gap-3 bg-brand-50 rounded-xl p-3 border border-brand-100">
+                  <div class="w-10 h-10 bg-white rounded-lg flex items-center justify-center flex-shrink-0">
                     <span class="text-brand-600 font-mono text-sm font-medium">{{ tech.abbr }}</span>
                   </div>
                   <div>
@@ -193,6 +193,8 @@
 </template>
 
 <script setup lang="ts">
+import { Code2, Network, Bot } from 'lucide-vue-next'
+
 useSeoMeta({
   title: 'Corescale | Web Development, Solution Architecture & AI Agents',
   description: 'Corescale builds custom web apps and AI agents that automate repetitive work, helping startups and growing businesses boost productivity.',
@@ -226,19 +228,19 @@ const platforms = [
 
 const services = [
   {
-    icon: '⚡',
+    icon: Code2,
     pain: 'Software that is slow or hard to change?',
     title: 'Web Development That Fits Your Business',
     description: 'We build fast, reliable web platforms around the way you work, so customers get a smooth experience and your team stops fighting its tools.',
   },
   {
-    icon: '🏗️',
+    icon: Network,
     pain: 'Unsure what to build, or afraid of costly mistakes?',
     title: 'A Clear Plan Before You Build',
     description: 'We turn your goals into a simple, proven blueprint, so you invest once, avoid rework, and can grow with confidence.',
   },
   {
-    icon: '🤖',
+    icon: Bot,
     pain: 'Your team loses hours to repetitive admin work?',
     title: 'Automate the Busywork with AI Agents',
     description: 'Custom AI agents handle routine tasks like data entry, reports, and customer queries, so your people can focus on work that grows the business.',
