@@ -56,6 +56,35 @@
       </div>
     </section>
 
+    <!-- Global reach -->
+    <section class="section-padding bg-white">
+      <div class="container-custom">
+        <div class="text-center mb-10">
+          <span class="text-accent-500 text-sm font-medium tracking-wide uppercase mb-3 block">Global Reach</span>
+          <h2 class="text-3xl font-bold mb-4 text-dark-900">Clients Around the World</h2>
+          <p class="text-dark-500 max-w-xl mx-auto">
+            Based in Sri Lanka, we have worked with clients in 25+ countries across six continents.
+          </p>
+        </div>
+        <div class="bg-brand-50 border border-brand-100 rounded-3xl p-4 sm:p-8">
+          <WorldMap :countries="clientCountries" />
+          <div class="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 mt-4 text-xs text-dark-700">
+            <span class="flex items-center gap-2"><span class="w-3 h-3 rounded-sm bg-brand-900"></span>Countries we have worked with</span>
+            <span class="flex items-center gap-2"><span class="w-3 h-3 rounded-full bg-accent-500"></span>Our home base</span>
+          </div>
+        </div>
+        <ul class="flex flex-wrap justify-center gap-2 mt-8">
+          <li
+            v-for="country in clientCountries"
+            :key="country.id"
+            class="text-xs px-3 py-1.5 rounded-full bg-brand-50 border border-brand-100 text-dark-700"
+          >
+            {{ country.name }}
+          </li>
+        </ul>
+      </div>
+    </section>
+
     <!-- CTA -->
     <section class="section-padding bg-white">
       <div class="container-custom text-center">
@@ -76,6 +105,38 @@ useSeoMeta({
   title: 'About | Corescale',
   description: 'Learn about Corescale - our mission, values, and expertise in web development, solution architecture, and custom AI agents.',
 })
+
+const clientCountries = [
+  { id: 'Australia', name: 'Australia' },
+  { id: 'Austria', name: 'Austria' },
+  { id: 'Belgium', name: 'Belgium' },
+  { id: 'Costa Rica', name: 'Costa Rica' },
+  { id: 'Ecuador', name: 'Ecuador' },
+  { id: 'France', name: 'France' },
+  { id: 'Germany', name: 'Germany' },
+  { id: 'Ghana', name: 'Ghana' },
+  { id: 'Greece', name: 'Greece' },
+  { id: 'India', name: 'India' },
+  { id: 'Indonesia', name: 'Indonesia' },
+  { id: 'Ireland', name: 'Ireland' },
+  { id: 'Kenya', name: 'Kenya' },
+  { id: 'Malaysia', name: 'Malaysia' },
+  { id: 'Morocco', name: 'Morocco' },
+  { id: 'Netherlands', name: 'Netherlands' },
+  { id: 'Nigeria', name: 'Nigeria' },
+  { id: 'Norway', name: 'Norway' },
+  { id: 'Pakistan', name: 'Pakistan' },
+  { id: 'Panama', name: 'Panama' },
+  { id: 'Philippines', name: 'Philippines' },
+  { id: 'Portugal', name: 'Portugal' },
+  { id: 'Somalia', name: 'Somalia' },
+  { id: 'South Africa', name: 'South Africa' },
+  { id: 'Spain', name: 'Spain' },
+  { id: 'Trinidad and Tobago', name: 'Trinidad and Tobago' },
+  { id: 'United Arab Emirates', name: 'United Arab Emirates' },
+  { id: 'United Kingdom', name: 'United Kingdom' },
+  { id: 'United States of America', name: 'United States' },
+]
 
 const values = [
   { title: 'Quality First', description: 'We never cut corners. Every line of code, every architecture decision, every deployment is done with care and attention to detail.' },

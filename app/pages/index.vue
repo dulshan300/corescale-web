@@ -109,19 +109,40 @@
             You always know what happens next, what it costs, and who is doing the work.
           </p>
         </div>
-        <ol class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
-          <li
-            v-for="(step, index) in steps"
-            :key="step.title"
-            class="relative bg-brand-50 border border-brand-100 rounded-2xl p-6"
-          >
-            <div class="w-10 h-10 bg-brand-900 text-white rounded-full flex items-center justify-center font-bold mb-4">
-              {{ index + 1 }}
-            </div>
-            <h3 class="font-semibold text-dark-900 mb-2">{{ step.title }}</h3>
-            <p class="text-dark-500 text-sm leading-relaxed">{{ step.description }}</p>
-          </li>
-        </ol>
+        <div ref="stepsRef" class="relative">
+          <div class="hidden lg:block absolute top-8 left-[10%] right-[10%] h-0.5 bg-brand-100 rounded-full overflow-hidden" aria-hidden="true">
+            <div
+              class="h-full bg-gradient-to-r from-brand-900 to-accent-500 origin-left transition-transform duration-[1800ms] ease-out"
+              :class="stepsVisible ? 'scale-x-100' : 'scale-x-0'"
+            ></div>
+          </div>
+          <div class="lg:hidden absolute left-8 top-8 bottom-8 w-0.5 -translate-x-1/2 bg-brand-100 rounded-full overflow-hidden" aria-hidden="true">
+            <div
+              class="h-full w-full bg-gradient-to-b from-brand-900 to-accent-500 origin-top transition-transform duration-[1800ms] ease-out"
+              :class="stepsVisible ? 'scale-y-100' : 'scale-y-0'"
+            ></div>
+          </div>
+          <ol class="relative grid grid-cols-1 lg:grid-cols-5 gap-10 lg:gap-6">
+            <li
+              v-for="(step, index) in steps"
+              :key="step.title"
+              class="flex lg:flex-col items-start lg:items-center gap-5 lg:gap-0 lg:text-center transition-all duration-700"
+              :class="stepsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'"
+              :style="{ transitionDelay: `${index * 180}ms` }"
+            >
+              <div class="relative flex-shrink-0">
+                <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-brand-900 to-accent-500 text-white flex items-center justify-center shadow-lg shadow-accent-500/25 ring-4 ring-white">
+                  <component :is="step.icon" class="w-7 h-7" :stroke-width="1.75" />
+                </div>
+                <span class="absolute -top-2 -right-2 w-6 h-6 rounded-full bg-white border border-brand-100 text-brand-900 text-xs font-bold flex items-center justify-center shadow-sm">{{ index + 1 }}</span>
+              </div>
+              <div class="lg:mt-5">
+                <h3 class="font-semibold text-dark-900 mb-2">{{ step.title }}</h3>
+                <p class="text-dark-500 text-sm leading-relaxed">{{ step.description }}</p>
+              </div>
+            </li>
+          </ol>
+        </div>
       </div>
     </section>
 
@@ -193,7 +214,8 @@
 </template>
 
 <script setup lang="ts">
-import { Code2, Network, Bot } from 'lucide-vue-next'
+import { Code2, Network, Bot, Search, ClipboardList, Hammer, Rocket, HeartHandshake } from 'lucide-vue-next'
+
 
 useSeoMeta({
   title: 'Corescale | Web Development, Solution Architecture & AI Agents',
@@ -203,7 +225,7 @@ useSeoMeta({
 const stats = [
   { value: '6+', label: 'Years Experience' },
   { value: '180+', label: 'Projects Delivered' },
-  { value: '10+', label: 'Enterprise Clients' },
+  { value: '25+', label: 'Countries Served' },
   { value: '99.9%', label: 'Uptime SLA' },
 ]
 
@@ -247,12 +269,29 @@ const services = [
   },
 ]
 
+const stepsRef = ref<HTMLElement | null>(null)
+const stepsVisible = ref(false)
+
+onMounted(() => {
+  if (!stepsRef.value || !('IntersectionObserver' in window)) {
+    stepsVisible.value = true
+    return
+  }
+  const observer = new IntersectionObserver(([entry]) => {
+    if (entry?.isIntersecting) {
+      stepsVisible.value = true
+      observer.disconnect()
+    }
+  }, { threshold: 0.25 })
+  observer.observe(stepsRef.value)
+})
+
 const steps = [
-  { title: 'Discovery', description: 'We listen to your goals, problems, and budget, and ask the right questions.' },
-  { title: 'Plan', description: 'You get a clear scope, timeline, and quote in writing before any work begins.' },
-  { title: 'Build', description: 'We build in small stages and show you progress, so there are no surprises.' },
-  { title: 'Launch', description: 'We test everything, then take your solution live and train your team.' },
-  { title: 'Support', description: 'We stay with you after launch to fix issues and improve results.' },
+  { icon: Search, title: 'Discovery', description: 'We listen to your goals, problems, and budget, and ask the right questions.' },
+  { icon: ClipboardList, title: 'Plan', description: 'You get a clear scope, timeline, and quote in writing before any work begins.' },
+  { icon: Hammer, title: 'Build', description: 'We build in small stages and show you progress, so there are no surprises.' },
+  { icon: Rocket, title: 'Launch', description: 'We test everything, then take your solution live and train your team.' },
+  { icon: HeartHandshake, title: 'Support', description: 'We stay with you after launch to fix issues and improve results.' },
 ]
 
 const points = [
