@@ -11,7 +11,7 @@
           :key="link.path"
           :to="link.path"
           class="text-sm text-dark-600 hover:text-brand-900 transition-colors font-medium"
-          active-class="!text-accent-500"
+          active-class="!text-accent-700"
         >
           {{ link.label }}
         </NuxtLink>
@@ -40,7 +40,7 @@
           :key="link.path"
           :to="link.path"
           class="text-sm text-dark-600 hover:text-brand-900 transition-colors font-medium"
-          active-class="!text-accent-500"
+          active-class="!text-accent-700"
           @click="mobileOpen = false"
         >
           {{ link.label }}

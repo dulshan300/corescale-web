@@ -23,8 +23,8 @@
           <h2 class="text-xl font-bold mb-2 text-dark-900">Questions about your privacy?</h2>
           <p class="text-dark-500">
             Email us at
-            <a href="mailto:info@corescale.dev" class="text-accent-600 hover:underline">info@corescale.dev</a>
-            or visit our <NuxtLink to="/contact" class="text-accent-600 hover:underline">contact page</NuxtLink>.
+            <a href="mailto:info@corescale.dev" class="text-accent-700 hover:underline">info@corescale.dev</a>
+            or visit our <NuxtLink to="/contact" class="text-accent-700 hover:underline">contact page</NuxtLink>.
           </p>
         </div>
       </div>

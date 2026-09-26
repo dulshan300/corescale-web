@@ -8,7 +8,7 @@
         <div class="container-custom text-center">
           <div class="inline-flex items-center gap-2 bg-accent-50 border border-accent-200 rounded-full px-4 py-1.5 mb-8">
             <span class="w-2 h-2 bg-accent-500 rounded-full animate-pulse"></span>
-            <span class="text-accent-600 text-xs font-medium tracking-wide uppercase">For Startups &amp; Growing Businesses</span>
+            <span class="text-accent-700 text-xs font-medium tracking-wide uppercase">For Startups &amp; Growing Businesses</span>
           </div>
           <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6 tracking-tight text-dark-900">
             Automate the Busywork.<br />
@@ -63,7 +63,7 @@
     <section class="section-padding bg-brand-50">
       <div class="container-custom">
         <div class="text-center mb-16">
-          <span class="text-accent-500 text-sm font-medium tracking-wide uppercase mb-3 block">What We Do</span>
+          <span class="text-accent-700 text-sm font-medium tracking-wide uppercase mb-3 block">What We Do</span>
           <h2 class="text-3xl md:text-4xl font-bold mb-4 text-dark-900">Solutions That Save You Time</h2>
           <p class="text-dark-500 max-w-xl mx-auto">
             Practical technology that removes busywork and helps your business grow without adding headcount.
@@ -78,7 +78,7 @@
             <div class="w-14 h-14 bg-gradient-to-br from-brand-900 to-accent-500 text-white rounded-xl flex items-center justify-center mb-6 shadow-lg shadow-accent-500/20 group-hover:scale-105 transition-transform">
               <component :is="service.icon" class="w-7 h-7" :stroke-width="1.75" />
             </div>
-            <p class="text-accent-600 text-sm font-medium mb-2">{{ service.pain }}</p>
+            <p class="text-accent-700 text-sm font-medium mb-2">{{ service.pain }}</p>
             <h3 class="text-xl font-semibold mb-3 text-dark-900">{{ service.title }}</h3>
             <p class="text-dark-500 text-sm leading-relaxed">{{ service.description }}</p>
             <div class="absolute bottom-8 right-8 opacity-0 group-hover:opacity-100 transition-opacity">
@@ -103,7 +103,7 @@
     <section class="section-padding bg-white">
       <div class="container-custom">
         <div class="text-center mb-16">
-          <span class="text-accent-500 text-sm font-medium tracking-wide uppercase mb-3 block">How We Work</span>
+          <span class="text-accent-700 text-sm font-medium tracking-wide uppercase mb-3 block">How We Work</span>
           <h2 class="text-3xl md:text-4xl font-bold mb-4 text-dark-900">From First Call to Launch in 5 Simple Steps</h2>
           <p class="text-dark-500 max-w-xl mx-auto">
             You always know what happens next, what it costs, and who is doing the work.
@@ -151,7 +151,7 @@
       <div class="container-custom">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div>
-            <span class="text-accent-500 text-sm font-medium tracking-wide uppercase mb-3 block">Why Corescale</span>
+            <span class="text-accent-700 text-sm font-medium tracking-wide uppercase mb-3 block">Why Corescale</span>
             <h2 class="text-3xl md:text-4xl font-bold mb-6 text-dark-900">Why Growing Teams Choose Us</h2>
             <p class="text-dark-500 mb-8 leading-relaxed">
               We pair strong technical skills with a practical business mindset. You get a small, responsive team that keeps things simple, respects your budget, and builds systems that grow with you.

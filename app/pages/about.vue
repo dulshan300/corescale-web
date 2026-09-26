@@ -41,7 +41,7 @@
       <ClientOnly><HeroNetwork /></ClientOnly>
       <div class="relative container-custom">
         <div class="text-center mb-12">
-          <span class="text-accent-500 text-sm font-medium tracking-wide uppercase mb-3 block">What We Have Built</span>
+          <span class="text-accent-700 text-sm font-medium tracking-wide uppercase mb-3 block">What We Have Built</span>
           <h2 class="text-3xl md:text-4xl font-bold mb-4 text-dark-900">Our Expertise</h2>
           <p class="text-dark-500 max-w-xl mx-auto">
             Hands-on experience in the areas that help startups and growing businesses the most.
@@ -84,7 +84,7 @@
     <section class="section-padding bg-white">
       <div class="container-custom">
         <div class="text-center mb-10">
-          <span class="text-accent-500 text-sm font-medium tracking-wide uppercase mb-3 block">Global Reach</span>
+          <span class="text-accent-700 text-sm font-medium tracking-wide uppercase mb-3 block">Global Reach</span>
           <h2 class="text-3xl font-bold mb-4 text-dark-900">Clients Around the World</h2>
           <p class="text-dark-500 max-w-xl mx-auto">
             Based in Sri Lanka, we have worked with clients in 25+ countries across six continents.

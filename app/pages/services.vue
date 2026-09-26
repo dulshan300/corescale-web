@@ -21,10 +21,10 @@
         >
           <div :class="{ 'lg:order-2': index % 2 === 1 }">
             <div class="inline-flex items-center gap-2 bg-accent-50 border border-accent-200 rounded-full px-3 py-1 mb-4">
-              <span class="text-accent-600 text-xs font-medium">{{ service.tag }}</span>
+              <span class="text-accent-700 text-xs font-medium">{{ service.tag }}</span>
             </div>
             <h2 class="text-2xl md:text-3xl font-bold mb-2 text-dark-900">{{ service.title }}</h2>
-            <p class="text-accent-600 font-medium mb-4">{{ service.pain }}</p>
+            <p class="text-accent-700 font-medium mb-4">{{ service.pain }}</p>
             <p class="text-dark-500 mb-6 leading-relaxed">{{ service.description }}</p>
             <ul class="space-y-3">
               <li v-for="item in service.features" :key="item" class="flex items-center gap-2 text-sm text-dark-600">
@@ -46,7 +46,7 @@
     <section class="section-padding bg-brand-50 border-y border-brand-100">
       <div class="container-custom max-w-3xl">
         <div class="text-center mb-12">
-          <span class="text-accent-500 text-sm font-medium tracking-wide uppercase mb-3 block">FAQ</span>
+          <span class="text-accent-700 text-sm font-medium tracking-wide uppercase mb-3 block">FAQ</span>
           <h2 class="text-3xl font-bold mb-4 text-dark-900">Frequently Asked Questions</h2>
           <p class="text-dark-500">Quick answers to what clients ask us most.</p>
         </div>

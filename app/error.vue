@@ -2,7 +2,7 @@
   <NuxtLayout>
     <section class="bg-gradient-to-b from-brand-50 to-white section-padding pt-40 pb-32">
       <div class="container-custom text-center">
-        <p class="text-accent-500 text-sm font-medium tracking-wide uppercase mb-3">
+        <p class="text-accent-700 text-sm font-medium tracking-wide uppercase mb-3">
           {{ is404 ? 'Error 404' : `Error ${error.statusCode}` }}
         </p>
         <h1 class="text-4xl md:text-6xl font-bold mb-4 text-dark-900">
