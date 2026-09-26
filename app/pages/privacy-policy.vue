@@ -53,7 +53,7 @@ const sections = [
     items: [
       'Details you give us: your name, email address, company name, the service you are interested in, and the message you write in our contact form or send by email or phone.',
       'Basic technical data: information your browser shares automatically, such as device type, browser, pages visited, and approximate location, which helps us keep the site secure and working well.',
-      'Website usage data: we use Google Analytics to see, in aggregate, how visitors find and use our site, such as which pages are popular and which countries visitors come from. This data is used only to improve our website.',
+      'Website usage data: if you accept analytics cookies, we use Google Analytics to see, in aggregate, how visitors find and use our site, such as which pages are popular and which countries visitors come from. This data is used only to improve our website. If you decline, we do not load Google Analytics at all.',
     ],
   },
   {
@@ -105,7 +105,8 @@ const sections = [
   {
     title: 'Cookies',
     paragraphs: [
-      'Our website uses cookies from Google Analytics to understand how visitors use it. These cookies do not identify you by name. You can block or delete cookies in your browser settings, or install Google\'s opt-out browser add-on, and the site will still work.',
+      'Our website only sets cookies if you accept them. The only optional cookies we use are Google Analytics cookies, which help us understand how visitors use the site and do not identify you by name. When you first visit, you can accept or decline them, and we remember your choice on your device.',
+      'You can change your mind at any time using "Cookie Settings" in the footer, or by clearing cookies in your browser settings. The site works the same either way.',
     ],
   },
   {

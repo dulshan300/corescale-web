@@ -39,6 +39,7 @@
         <div class="flex items-center gap-4">
           <NuxtLink to="/privacy-policy" class="text-dark-700 hover:text-brand-900 transition-colors text-xs">Privacy Policy</NuxtLink>
           <NuxtLink to="/terms-of-service" class="text-dark-700 hover:text-brand-900 transition-colors text-xs">Terms of Service</NuxtLink>
+          <button type="button" class="text-dark-700 hover:text-brand-900 transition-colors text-xs" @click="openSettings">Cookie Settings</button>
         </div>
       </div>
     </div>
@@ -47,4 +48,6 @@
 
 <script setup lang="ts">
 import { Linkedin, Facebook } from 'lucide-vue-next'
+
+const { openSettings } = useCookieConsent()
 </script>
