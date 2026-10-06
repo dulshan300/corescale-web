@@ -27,6 +27,7 @@
             <h2 class="text-2xl md:text-3xl font-bold mb-2 text-dark-900">{{ service.title }}</h2>
             <p class="text-accent-700 font-medium mb-4">{{ service.pain }}</p>
             <p class="text-dark-500 mb-6 leading-relaxed">{{ service.description }}</p>
+            <NuxtLink v-if="service.to" :to="service.to" class="inline-block text-accent-700 font-medium text-sm hover:underline mb-6">{{ service.linkLabel }} &rarr;</NuxtLink>
             <ul class="space-y-3">
               <li v-for="item in service.features" :key="item" class="flex items-center gap-2 text-sm text-dark-600">
                 <svg class="w-4 h-4 text-accent-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -149,6 +150,8 @@ useHead({
 const services = [
   {
     slug: 'web-development',
+    to: '/custom-web-development',
+    linkLabel: 'Custom web development, pricing & FAQ',
     illustration: 'web' as const,
     tag: 'Development',
     title: 'Web Application Development',
@@ -180,6 +183,8 @@ const services = [
   },
   {
     slug: 'ai-agents',
+    to: '/ai-agents',
+    linkLabel: 'AI agents, pricing & FAQ',
     illustration: 'ai' as const,
     tag: 'Automation',
     title: 'Custom AI Agents',

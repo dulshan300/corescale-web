@@ -31,8 +31,8 @@
 
     <!-- Stats Section -->
     <section class="border-y border-dark-200 bg-white">
-      <div class="container-custom grid grid-cols-2 md:grid-cols-4 divide-x divide-dark-200">
-        <div v-for="stat in stats" :key="stat.label" class="px-6 py-12 text-center group">
+      <div class="container-custom grid grid-cols-3 divide-x divide-dark-200">
+        <div v-for="stat in stats" :key="stat.label" class="px-3 sm:px-6 py-12 text-center group">
           <div class="text-3xl md:text-4xl font-bold text-brand-900 mb-2 group-hover:text-accent-500 transition-colors">{{ stat.value }}</div>
           <div class="text-dark-500 text-sm">{{ stat.label }}</div>
         </div>
@@ -73,7 +73,7 @@
           <NuxtLink
             v-for="service in services"
             :key="service.title"
-            :to="`/services#${service.slug}`"
+            :to="service.to"
             class="group relative block bg-white border border-dark-200 rounded-2xl p-8 hover:border-accent-500/30 hover:shadow-xl hover:shadow-accent-500/5 transition-all duration-300"
           >
             <div class="w-14 h-14 bg-gradient-to-br from-brand-900 to-accent-500 text-white rounded-xl flex items-center justify-center mb-6 shadow-lg shadow-accent-500/20 group-hover:scale-105 transition-transform">
@@ -232,15 +232,14 @@ import { Code2, Network, Bot, Search, ClipboardList, Hammer, Rocket, HeartHandsh
 
 
 useSeoMeta({
-  title: 'Custom Web Apps & AI Agents for Startups | Corescale',
-  description: 'Corescale builds custom web apps and AI agents that automate repetitive work, helping startups and growing businesses boost productivity.',
+  title: 'Custom Web Development & AI Agency for Startups | Corescale',
+  description: 'Corescale is a custom web development company and AI agency. We build web apps and AI agents that automate repetitive work for startups and growing businesses.',
 })
 
 const stats = [
   { value: '6+', label: 'Years Experience' },
   { value: '180+', label: 'Projects Delivered' },
   { value: '25+', label: 'Countries Served' },
-  { value: '99.9%', label: 'Uptime SLA' },
 ]
 
 const platforms = [
@@ -265,6 +264,7 @@ const platforms = [
 const services = [
   {
     slug: 'web-development',
+    to: '/custom-web-development',
     icon: Code2,
     pain: 'Software that is slow or hard to change?',
     title: 'Web Development That Fits Your Business',
@@ -272,6 +272,7 @@ const services = [
   },
   {
     slug: 'solution-architecture',
+    to: '/services#solution-architecture',
     icon: Network,
     pain: 'Unsure what to build, or afraid of costly mistakes?',
     title: 'A Clear Plan Before You Build',
@@ -279,6 +280,7 @@ const services = [
   },
   {
     slug: 'ai-agents',
+    to: '/ai-agents',
     icon: Bot,
     pain: 'Your team loses hours to repetitive admin work?',
     title: 'Automate the Busywork with AI Agents',

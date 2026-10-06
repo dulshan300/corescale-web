@@ -3,6 +3,8 @@ const site = 'https://corescale.dev'
 const pages = [
   { path: '', priority: '1.0' },
   { path: '/services', priority: '0.9' },
+  { path: '/custom-web-development', priority: '0.9' },
+  { path: '/ai-agents', priority: '0.9' },
   { path: '/about', priority: '0.7' },
   { path: '/contact', priority: '0.8' },
   { path: '/privacy-policy', priority: '0.3' },
