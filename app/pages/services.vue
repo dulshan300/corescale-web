@@ -114,7 +114,7 @@ const faqs = [
   },
   {
     question: 'Do you work with clients outside Sri Lanka?',
-    answer: 'Yes. We work with clients around the world, including through platforms like Fiverr and Upwork. We communicate by email, chat, and video call, and our working hours are Sri Lanka time (GMT+5:30).',
+    answer: 'Yes. We work with clients around the world, including through platforms like Fiverr and Upwork. We communicate by email, chat, and video call, and we arrange calls at times that suit you, including overlap with your working hours.',
   },
   {
     question: 'Will I own the code and the finished product?',

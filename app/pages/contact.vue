@@ -102,6 +102,10 @@
                   <a href="tel:+94727433525" class="hover:text-brand-900 transition-colors">+94 72 743 3525</a>
                 </div>
                 <div class="flex items-center gap-3 text-dark-700">
+                  <span class="w-9 h-9 bg-brand-50 border border-brand-100 rounded-lg flex items-center justify-center text-accent-500 flex-shrink-0"><MessageCircle class="w-4 h-4" :stroke-width="2" /></span>
+                  <a href="https://wa.me/94727433525" target="_blank" rel="noopener noreferrer" class="hover:text-brand-900 transition-colors">WhatsApp: +94 72 743 3525</a>
+                </div>
+                <div class="flex items-center gap-3 text-dark-700">
                   <span class="w-9 h-9 bg-brand-50 border border-brand-100 rounded-lg flex items-center justify-center text-accent-500 flex-shrink-0"><MapPin class="w-4 h-4" :stroke-width="2" /></span>
                   <span>Sri Lanka · Working with clients worldwide</span>
                 </div>
@@ -109,11 +113,10 @@
             </div>
 
             <div>
-              <h2 class="font-semibold text-dark-900 mb-3">Business Hours <span class="text-dark-400 text-xs font-normal">(Sri Lanka time, GMT+5:30)</span></h2>
+              <h2 class="font-semibold text-dark-900 mb-3">Response Time</h2>
               <div class="space-y-2 text-sm text-dark-600">
-                <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
-                <p>Saturday: 10:00 AM - 2:00 PM</p>
-                <p>Sunday: Closed</p>
+                <p>We reply to every enquiry within one business day. Message us on WhatsApp or email any time and we'll get back to you.</p>
+                <p class="text-dark-400 text-xs">Based in Sri Lanka (GMT+5:30), working flexibly with clients across time zones.</p>
               </div>
             </div>
 
@@ -136,7 +139,7 @@
 </template>
 
 <script setup lang="ts">
-import { Mail, Phone, MapPin, Linkedin, Facebook, ChevronDown } from 'lucide-vue-next'
+import { Mail, Phone, MessageCircle, MapPin, Linkedin, Facebook, ChevronDown } from 'lucide-vue-next'
 
 useSeoMeta({
   title: 'Contact Corescale | Start Your Web or AI Agent Project',
