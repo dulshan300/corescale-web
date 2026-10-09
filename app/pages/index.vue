@@ -232,7 +232,7 @@ import { Code2, Network, Bot, Search, ClipboardList, Hammer, Rocket, HeartHandsh
 
 
 useSeoMeta({
-  title: 'Custom Web Development & AI Agency for Startups | Corescale',
+  title: 'Custom Web Development & AI Agents for Startups | Corescale',
   description: 'Corescale is a custom web development company and AI agency. We build web apps and AI agents that automate repetitive work for startups and growing businesses.',
 })
 

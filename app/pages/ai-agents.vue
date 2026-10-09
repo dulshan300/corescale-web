@@ -20,9 +20,9 @@
 
 <script setup lang="ts">
 useSeoMeta({
-  title: 'AI Agency: Custom AI Agent Development | Corescale',
-  description: 'Corescale is an AI agency building custom AI agents that automate data entry, reports, and customer support. Startup-friendly pricing from $1,000.',
-  ogTitle: 'AI Agency: Custom AI Agent Development | Corescale',
+  title: 'Custom AI Agent Development | Corescale',
+  description: 'Corescale builds custom AI agents that automate data entry, reports, and customer support. A startup-friendly AI agency, with projects from $1,000.',
+  ogTitle: 'Custom AI Agent Development | Corescale',
   ogDescription: 'Custom AI agents that automate repetitive work for startups and growing businesses. Projects from $1,000.',
 })
 
