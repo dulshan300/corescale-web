@@ -1,17 +1,12 @@
 <template>
   <div>
     <!-- Hero -->
-    <section class="bg-gradient-to-b from-brand-50 to-white section-padding pt-32 pb-16">
-      <div class="container-custom">
-        <h1 class="text-4xl md:text-5xl font-bold mb-4 text-dark-900">Get in Touch</h1>
-        <p class="text-dark-500 text-lg max-w-2xl">
-          Have a project in mind or want to learn more about our services? We'd love to hear from you.
-        </p>
-      </div>
-    </section>
+    <PageHero eyebrow="Contact" title="Get in Touch">
+      <template #subtitle>Have a project in mind or want to learn more about our services? We'd love to hear from you.</template>
+    </PageHero>
 
     <!-- Contact Form & Info -->
-    <section class="section-padding pt-0 bg-white">
+    <section class="section-padding bg-white">
       <div class="container-custom">
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
           <!-- Form -->

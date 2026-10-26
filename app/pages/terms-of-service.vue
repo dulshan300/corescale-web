@@ -1,15 +1,11 @@
 <template>
   <div>
-    <section class="bg-gradient-to-b from-brand-50 to-white section-padding pt-32 pb-16">
-      <div class="container-custom">
-        <h1 class="text-4xl md:text-5xl font-bold mb-4 text-dark-900">Terms of Service</h1>
-        <p class="text-dark-500 text-lg max-w-2xl">
-          The simple ground rules for using our website and working with Corescale. Last updated: {{ updated }}.
-        </p>
-      </div>
-    </section>
+    <!-- Hero -->
+    <PageHero eyebrow="Legal" title="Terms of Service">
+      <template #subtitle>The simple ground rules for using our website and working with Corescale. Last updated: {{ updated }}.</template>
+    </PageHero>
 
-    <section class="section-padding pt-0 bg-white">
+    <section class="section-padding bg-white">
       <div class="container-custom max-w-3xl space-y-10">
         <div v-for="section in sections" :key="section.title">
           <h2 class="text-xl md:text-2xl font-bold mb-3 text-dark-900">{{ section.title }}</h2>

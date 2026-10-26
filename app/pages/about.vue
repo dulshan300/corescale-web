@@ -1,17 +1,12 @@
 <template>
   <div>
     <!-- Hero -->
-    <section class="bg-gradient-to-b from-brand-50 to-white section-padding pt-32 pb-16">
-      <div class="container-custom">
-        <h1 class="text-4xl md:text-5xl font-bold mb-4 text-dark-900">About Corescale</h1>
-        <p class="text-dark-500 text-lg max-w-2xl">
-          We're a team of engineers and architects passionate about building technology that matters.
-        </p>
-      </div>
-    </section>
+    <PageHero eyebrow="About Us" title="About Corescale">
+      <template #subtitle>We're a team of engineers and architects passionate about building technology that matters.</template>
+    </PageHero>
 
     <!-- Mission -->
-    <section class="section-padding pt-0 bg-white">
+    <section class="section-padding bg-white">
       <div class="container-custom">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
           <div>
@@ -110,17 +105,11 @@
     </section>
 
     <!-- CTA -->
-    <section class="section-padding bg-white">
-      <div class="container-custom text-center">
-        <h2 class="text-3xl font-bold mb-4 text-dark-900">Let's Work Together</h2>
-        <p class="text-dark-500 max-w-xl mx-auto mb-8">
-          Have a project in mind? We'd love to hear about it.
-        </p>
-        <NuxtLink to="/contact" class="btn-primary">
-          Contact Us
-        </NuxtLink>
-      </div>
-    </section>
+    <CtaBanner
+      heading="Let's Work Together"
+      text="Have a project in mind? We'd love to hear about it."
+      label="Contact Us"
+    />
   </div>
 </template>
 

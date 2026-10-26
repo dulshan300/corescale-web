@@ -1,22 +1,18 @@
 <template>
   <div>
     <!-- Hero -->
-    <section class="bg-gradient-to-b from-brand-50 to-white section-padding pt-32 pb-16">
-      <div class="container-custom">
-        <h1 class="text-4xl md:text-5xl font-bold mb-4 text-dark-900">Web Development &amp; AI Agent Services</h1>
-        <p class="text-dark-500 text-lg max-w-2xl">
-          Practical technology that helps startups and growing businesses save time and get more done.
-        </p>
-      </div>
-    </section>
+    <PageHero eyebrow="Our Services" title="Web Development &amp; AI Agent Services">
+      <template #subtitle>Practical technology that helps startups and growing businesses save time and get more done.</template>
+    </PageHero>
 
     <!-- Services List -->
-    <section class="section-padding pt-0 bg-white">
+    <section class="section-padding bg-white">
       <div class="container-custom space-y-16">
         <div
           v-for="(service, index) in services"
           :id="service.slug"
           :key="service.title"
+          v-reveal
           class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center scroll-mt-28"
           :class="{ 'lg:flex-row-reverse': index % 2 === 1 }"
         >
@@ -71,17 +67,10 @@
     </section>
 
     <!-- CTA -->
-    <section class="section-padding bg-brand-900">
-      <div class="container-custom text-center">
-        <h2 class="text-3xl font-bold mb-4 text-white">Need a Custom Solution?</h2>
-        <p class="text-brand-200 max-w-xl mx-auto mb-8">
-          Every business is unique. Let's discuss how we can tailor our services to meet your specific requirements.
-        </p>
-        <NuxtLink to="/contact" class="btn-primary">
-          Get in Touch
-        </NuxtLink>
-      </div>
-    </section>
+    <CtaBanner
+      heading="Need a Custom Solution?"
+      text="Every business is unique. Let's discuss how we can tailor our services to meet your specific requirements."
+    />
   </div>
 </template>
 

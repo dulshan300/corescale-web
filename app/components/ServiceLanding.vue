@@ -1,24 +1,20 @@
 <template>
   <div>
     <!-- Hero -->
-    <section class="bg-gradient-to-b from-brand-50 to-white section-padding pt-32 pb-16">
-      <div class="container-custom grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-        <div>
-          <div class="inline-flex items-center gap-2 bg-accent-50 border border-accent-200 rounded-full px-3 py-1 mb-4">
-            <span class="text-accent-700 text-xs font-medium">{{ eyebrow }}</span>
-          </div>
-          <h1 class="text-4xl md:text-5xl font-bold mb-4 text-dark-900">{{ title }}</h1>
-          <p class="text-dark-500 text-lg mb-8 leading-relaxed">{{ intro }}</p>
-          <div class="flex flex-wrap gap-3">
-            <NuxtLink to="/contact" class="btn-primary">Get a Free Quote</NuxtLink>
-            <a href="#pricing" class="btn-secondary">See Pricing</a>
-          </div>
-        </div>
-        <div class="bg-gradient-to-br from-brand-50 to-accent-50 border border-brand-100 rounded-2xl p-4 sm:p-6 flex items-center justify-center">
-          <ServiceIllustration :name="illustration" class="w-full max-w-md h-auto" />
-        </div>
+    <PageHero :eyebrow="eyebrow" :title="title" :subtitle="intro">
+      <div class="flex flex-wrap gap-3 mt-10">
+        <NuxtLink to="/contact" class="btn-primary">Get a Free Quote</NuxtLink>
+        <a href="#pricing" class="btn-ghost">See Pricing</a>
       </div>
-    </section>
+      <template #aside>
+        <div class="relative">
+          <div class="absolute -inset-6 bg-accent-500/20 rounded-[2rem] blur-3xl" aria-hidden="true"></div>
+          <div class="relative bg-white/95 border border-white/20 rounded-3xl p-4 sm:p-6 flex items-center justify-center shadow-2xl shadow-black/30">
+            <ServiceIllustration :name="illustration" class="w-full max-w-md h-auto" />
+          </div>
+        </div>
+      </template>
+    </PageHero>
 
     <!-- What we build -->
     <section class="section-padding bg-white">
@@ -28,9 +24,9 @@
           <p class="text-dark-500">{{ buildIntro }}</p>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <div v-for="item in offerings" :key="item.title" class="border border-dark-200 rounded-xl p-6">
-            <h3 class="font-semibold text-dark-900 mb-2">{{ item.title }}</h3>
-            <p class="text-sm text-dark-500 leading-relaxed">{{ item.description }}</p>
+          <div v-for="(item, index) in offerings" :key="item.title" v-reveal="(index % 3) * 100" v-tilt="4" class="card-glow p-6">
+            <h3 class="relative font-semibold text-dark-900 mb-2">{{ item.title }}</h3>
+            <p class="relative text-sm text-dark-500 leading-relaxed">{{ item.description }}</p>
           </div>
         </div>
       </div>
@@ -121,13 +117,7 @@
     </section>
 
     <!-- CTA -->
-    <section class="section-padding bg-brand-900">
-      <div class="container-custom text-center">
-        <h2 class="text-3xl font-bold mb-4 text-white">{{ ctaHeading }}</h2>
-        <p class="text-brand-200 max-w-xl mx-auto mb-8">{{ ctaText }}</p>
-        <NuxtLink to="/contact" class="btn-primary">Get in Touch</NuxtLink>
-      </div>
-    </section>
+    <CtaBanner :heading="ctaHeading" :text="ctaText" />
   </div>
 </template>
 

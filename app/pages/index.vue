@@ -1,53 +1,62 @@
 <template>
   <div>
     <!-- Hero Section -->
-    <section class="relative overflow-hidden bg-gradient-to-b from-brand-50 to-white">
-      <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-accent-500/5 via-transparent to-transparent"></div>
-      <ClientOnly><HeroNetwork /></ClientOnly>
-      <div class="relative section-padding pt-32 pb-24">
-        <div class="container-custom text-center">
-          <div class="inline-flex items-center gap-2 bg-accent-50 border border-accent-200 rounded-full px-4 py-1.5 mb-8">
-            <span class="w-2 h-2 bg-accent-500 rounded-full animate-pulse"></span>
-            <span class="text-accent-700 text-xs font-medium tracking-wide uppercase">For Startups &amp; Growing Businesses</span>
-          </div>
-          <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6 tracking-tight text-dark-900">
-            Automate the Busywork.<br />
-            <span class="text-gradient">Grow Faster.</span>
-          </h1>
-          <p class="text-dark-500 text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
-            Custom web apps and AI agents that give startups and growing businesses their time back.
-          </p>
-          <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <NuxtLink to="/services" class="btn-primary text-base">
-              Explore Services
-            </NuxtLink>
-            <NuxtLink to="/contact" class="btn-secondary text-base">
-              Schedule a Consultation
-            </NuxtLink>
-          </div>
-        </div>
+    <section class="relative overflow-hidden bg-hero min-h-[min(100svh,980px)] flex items-center">
+      <div class="absolute inset-0 bg-grid-dark" aria-hidden="true"></div>
+      <div class="absolute inset-0 opacity-60 md:opacity-100">
+        <ClientOnly><HeroCore /></ClientOnly>
       </div>
-    </section>
+      <div class="absolute inset-0 bg-gradient-to-r from-brand-950/80 via-brand-950/30 to-transparent hidden md:block pointer-events-none" aria-hidden="true"></div>
+      <div class="relative w-full section-padding pt-32 md:pt-36">
+        <div class="container-custom text-center md:text-left">
+          <div class="max-w-2xl mx-auto md:mx-0">
+            <span class="eyebrow-dark mb-8">
+              <span class="w-2 h-2 bg-accent-400 rounded-full animate-pulse"></span>
+              For Startups &amp; Growing Businesses
+            </span>
+            <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.05] mb-6 tracking-tight text-white">
+              Automate the Busywork.<br />
+              <span class="text-gradient-light">Grow Faster.</span>
+            </h1>
+            <p class="text-brand-100/80 text-lg md:text-xl max-w-xl mx-auto md:mx-0 mb-10 leading-relaxed">
+              Custom web apps and AI agents that give startups and growing businesses their time back.
+            </p>
+            <div class="flex flex-col sm:flex-row items-center md:items-start justify-center md:justify-start gap-4">
+              <NuxtLink to="/services" class="btn-primary text-base gap-2">
+                Explore Services
+                <ArrowRight class="w-5 h-5" :stroke-width="2" />
+              </NuxtLink>
+              <NuxtLink to="/contact" class="btn-ghost text-base">
+                Schedule a Consultation
+              </NuxtLink>
+            </div>
 
-    <!-- Stats Section -->
-    <section class="border-y border-dark-200 bg-white">
-      <div class="container-custom grid grid-cols-3 divide-x divide-dark-200">
-        <div v-for="stat in stats" :key="stat.label" class="px-3 sm:px-6 py-12 text-center group">
-          <div class="text-3xl md:text-4xl font-bold text-brand-900 mb-2 group-hover:text-accent-500 transition-colors">{{ stat.value }}</div>
-          <div class="text-dark-500 text-sm">{{ stat.label }}</div>
+            <dl class="mt-14 grid grid-cols-3 gap-3 max-w-lg mx-auto md:mx-0">
+              <div v-for="stat in stats" :key="stat.label" class="glass-dark rounded-2xl px-3 py-4 md:px-5 text-center md:text-left flex flex-col-reverse">
+                <dt class="text-brand-200 text-xs md:text-sm mt-1">{{ stat.label }}</dt>
+                <dd v-count class="text-2xl md:text-3xl font-bold text-white tabular-nums">{{ stat.value }}</dd>
+              </div>
+            </dl>
+          </div>
         </div>
       </div>
+      <a href="#services" class="absolute bottom-8 left-1/2 -translate-x-1/2 hidden md:flex text-brand-200/70 hover:text-white transition-colors" aria-label="Scroll to services">
+        <span class="w-6 h-10 rounded-full border border-current flex justify-center pt-2">
+          <span class="w-1 h-2 rounded-full bg-current animate-scroll-cue"></span>
+        </span>
+      </a>
+      <div class="absolute bottom-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-accent-500/50 to-transparent" aria-hidden="true"></div>
     </section>
 
     <!-- Platforms -->
     <section class="bg-white py-10 border-b border-dark-200">
       <div class="container-custom px-6 text-center">
-        <p class="text-dark-400 text-xs font-medium tracking-wide uppercase mb-5">Experience working with international companies</p>
+        <p class="text-dark-400 text-xs font-medium tracking-[0.18em] uppercase mb-5">Experience working with international companies</p>
         <div class="flex flex-wrap items-center justify-center gap-4">
           <span
             v-for="platform in platforms"
             :key="platform.name"
-            class="flex items-center gap-2.5 px-6 h-14 bg-brand-50 border border-brand-100 rounded-lg text-brand-900 hover:text-accent-500 hover:border-accent-500/30 transition-colors"
+            class="flex items-center gap-2.5 px-6 h-14 bg-brand-50 border border-brand-100 rounded-xl text-brand-900 hover:text-accent-500 hover:border-accent-500/30 transition-colors"
           >
             <svg :viewBox="platform.viewBox" :class="platform.class" fill="currentColor" role="img" :aria-label="platform.name">
               <path :d="platform.path" />
@@ -60,66 +69,72 @@
     </section>
 
     <!-- Services Overview -->
-    <section class="section-padding bg-brand-50">
-      <div class="container-custom">
-        <div class="text-center mb-16">
-          <span class="text-accent-700 text-sm font-medium tracking-wide uppercase mb-3 block">What We Do</span>
-          <h2 class="text-3xl md:text-4xl font-bold mb-4 text-dark-900">AI Agents &amp; Custom Software That Save You Time</h2>
-          <p class="text-dark-500 max-w-xl mx-auto">
+    <section id="services" class="relative section-padding bg-white scroll-mt-16">
+      <div class="absolute inset-0 bg-grid services-grid-fade" aria-hidden="true"></div>
+      <div class="relative container-custom">
+        <div v-reveal class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-14">
+          <div class="max-w-2xl">
+            <span class="eyebrow">What We Do</span>
+            <h2 class="text-3xl md:text-5xl font-bold tracking-tight text-dark-900">AI Agents &amp; Custom Software That Save You Time</h2>
+          </div>
+          <p class="text-dark-500 max-w-sm md:text-right">
             Practical technology that removes busywork and helps your business grow without adding headcount.
           </p>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <NuxtLink
-            v-for="service in services"
-            :key="service.title"
-            :to="service.to"
-            class="group relative block bg-white border border-dark-200 rounded-2xl p-8 hover:border-accent-500/30 hover:shadow-xl hover:shadow-accent-500/5 transition-all duration-300"
-          >
-            <div class="w-14 h-14 bg-gradient-to-br from-brand-900 to-accent-500 text-white rounded-xl flex items-center justify-center mb-6 shadow-lg shadow-accent-500/20 group-hover:scale-105 transition-transform">
-              <component :is="service.icon" class="w-7 h-7" :stroke-width="1.75" />
-            </div>
-            <p class="text-accent-700 text-sm font-medium mb-2">{{ service.pain }}</p>
-            <h3 class="text-xl font-semibold mb-3 text-dark-900">{{ service.title }}</h3>
-            <p class="text-dark-500 text-sm leading-relaxed">{{ service.description }}</p>
-            <div class="absolute bottom-8 right-8 opacity-0 group-hover:opacity-100 transition-opacity">
-              <svg class="w-5 h-5 text-accent-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
-            </div>
-          </NuxtLink>
+          <div v-for="(service, index) in services" :key="service.title" v-reveal="index * 120">
+            <NuxtLink
+              v-tilt
+              :to="service.to"
+              class="group card-glow flex flex-col h-full p-8"
+            >
+              <div class="relative flex items-start justify-between mb-8">
+                <div class="w-14 h-14 bg-gradient-to-br from-brand-900 to-accent-500 text-white rounded-2xl flex items-center justify-center shadow-lg shadow-accent-500/25 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300">
+                  <component :is="service.icon" class="w-7 h-7" :stroke-width="1.75" />
+                </div>
+                <span class="text-5xl font-bold text-brand-100 group-hover:text-accent-100 transition-colors tabular-nums">0{{ index + 1 }}</span>
+              </div>
+              <p class="relative text-accent-700 text-sm font-medium mb-2">{{ service.pain }}</p>
+              <h3 class="relative text-xl font-semibold mb-3 text-dark-900">{{ service.title }}</h3>
+              <p class="relative text-dark-500 text-sm leading-relaxed mb-8">{{ service.description }}</p>
+              <span class="relative mt-auto inline-flex items-center gap-2 text-sm font-semibold text-brand-900 group-hover:text-accent-600 transition-colors">
+                Learn more
+                <ArrowRight class="w-4 h-4 group-hover:translate-x-1 transition-transform" :stroke-width="2" />
+              </span>
+            </NuxtLink>
+          </div>
         </div>
-        <div class="text-center mt-12">
-          <NuxtLink to="/services" class="btn-secondary inline-flex items-center gap-2">
+        <div v-reveal class="text-center mt-12">
+          <NuxtLink to="/services" class="btn-secondary gap-2">
             View All Services
-            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-            </svg>
+            <ArrowRight class="w-4 h-4" :stroke-width="2" />
           </NuxtLink>
         </div>
       </div>
     </section>
 
     <!-- How We Work -->
-    <section class="section-padding bg-white">
-      <div class="container-custom">
-        <div class="text-center mb-16">
-          <span class="text-accent-700 text-sm font-medium tracking-wide uppercase mb-3 block">How We Work</span>
-          <h2 class="text-3xl md:text-4xl font-bold mb-4 text-dark-900">From First Call to Launch in 5 Simple Steps</h2>
-          <p class="text-dark-500 max-w-xl mx-auto">
+    <section class="relative overflow-hidden section-padding bg-brand-950">
+      <div class="absolute inset-0 bg-grid-dark" aria-hidden="true"></div>
+      <div class="absolute -top-32 right-0 w-[520px] h-[520px] rounded-full bg-accent-500/10 blur-3xl" aria-hidden="true"></div>
+      <div class="relative container-custom">
+        <div v-reveal class="text-center mb-16">
+          <span class="eyebrow !text-accent-300">How We Work</span>
+          <h2 class="text-3xl md:text-5xl font-bold tracking-tight mb-4 text-white">From First Call to Launch in 5 Simple Steps</h2>
+          <p class="text-brand-200 max-w-xl mx-auto">
             You always know what happens next, what it costs, and who is doing the work.
           </p>
         </div>
         <div ref="stepsRef" class="relative">
-          <div class="hidden lg:block absolute top-8 left-[10%] right-[10%] h-0.5 bg-brand-100 rounded-full overflow-hidden" aria-hidden="true">
+          <div class="hidden lg:block absolute top-8 left-[10%] right-[10%] h-0.5 bg-white/10 rounded-full overflow-hidden" aria-hidden="true">
             <div
-              class="h-full bg-gradient-to-r from-brand-900 to-accent-500 origin-left transition-transform duration-[1800ms] ease-out"
+              class="h-full bg-gradient-to-r from-accent-700 via-accent-500 to-accent-300 origin-left transition-transform duration-[1800ms] ease-out"
               :class="stepsVisible ? 'scale-x-100' : 'scale-x-0'"
             ></div>
           </div>
-          <div class="lg:hidden absolute left-8 top-8 bottom-8 w-0.5 -translate-x-1/2 bg-brand-100 rounded-full overflow-hidden" aria-hidden="true">
+          <div class="lg:hidden absolute left-8 top-8 bottom-8 w-0.5 -translate-x-1/2 bg-white/10 rounded-full overflow-hidden" aria-hidden="true">
             <div
-              class="h-full w-full bg-gradient-to-b from-brand-900 to-accent-500 origin-top transition-transform duration-[1800ms] ease-out"
+              class="h-full w-full bg-gradient-to-b from-accent-700 to-accent-300 origin-top transition-transform duration-[1800ms] ease-out"
               :class="stepsVisible ? 'scale-y-100' : 'scale-y-0'"
             ></div>
           </div>
@@ -127,19 +142,20 @@
             <li
               v-for="(step, index) in steps"
               :key="step.title"
-              class="flex lg:flex-col items-start lg:items-center gap-5 lg:gap-0 lg:text-center transition-all duration-700"
+              class="group flex lg:flex-col items-start lg:items-center gap-5 lg:gap-0 lg:text-center transition-all duration-700"
               :class="stepsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'"
               :style="{ transitionDelay: `${index * 180}ms` }"
             >
               <div class="relative flex-shrink-0">
-                <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-brand-900 to-accent-500 text-white flex items-center justify-center shadow-lg shadow-accent-500/25 ring-4 ring-white">
+                <div class="absolute inset-0 rounded-2xl bg-accent-500/40 blur-xl opacity-0 group-hover:opacity-100 transition-opacity" aria-hidden="true"></div>
+                <div class="relative w-16 h-16 rounded-2xl bg-gradient-to-br from-brand-800 to-accent-500 text-white flex items-center justify-center shadow-lg shadow-accent-500/25 ring-4 ring-brand-950 group-hover:-translate-y-1 transition-transform">
                   <component :is="step.icon" class="w-7 h-7" :stroke-width="1.75" />
                 </div>
-                <span class="absolute -top-2 -right-2 w-6 h-6 rounded-full bg-white border border-brand-100 text-brand-900 text-xs font-bold flex items-center justify-center shadow-sm">{{ index + 1 }}</span>
+                <span class="absolute -top-2 -right-2 w-6 h-6 rounded-full bg-accent-500 text-white text-xs font-bold flex items-center justify-center shadow-sm ring-2 ring-brand-950">{{ index + 1 }}</span>
               </div>
-              <div class="lg:mt-5">
-                <h3 class="font-semibold text-dark-900 mb-2">{{ step.title }}</h3>
-                <p class="text-dark-500 text-sm leading-relaxed">{{ step.description }}</p>
+              <div class="lg:mt-6">
+                <h3 class="font-semibold text-white mb-2">{{ step.title }}</h3>
+                <p class="text-brand-200 text-sm leading-relaxed">{{ step.description }}</p>
               </div>
             </li>
           </ol>
@@ -148,42 +164,43 @@
     </section>
 
     <!-- Why Choose Us -->
-    <section class="section-padding bg-brand-50">
+    <section class="section-padding bg-brand-50 overflow-hidden">
       <div class="container-custom">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <div>
-            <span class="text-accent-700 text-sm font-medium tracking-wide uppercase mb-3 block">Why Corescale</span>
-            <h2 class="text-3xl md:text-4xl font-bold mb-6 text-dark-900">Why Growing Teams Choose Us</h2>
-            <p class="text-dark-500 mb-8 leading-relaxed">
+          <div v-reveal>
+            <span class="eyebrow">Why Corescale</span>
+            <h2 class="text-3xl md:text-5xl font-bold tracking-tight mb-6 text-dark-900">Why Growing Teams Choose Us</h2>
+            <p class="text-dark-500 mb-10 leading-relaxed">
               We pair strong technical skills with a practical business mindset. You get a small, responsive team that keeps things simple, respects your budget, and builds systems that grow with you.
             </p>
-            <div class="space-y-5">
-              <div v-for="point in points" :key="point.title" class="flex items-start gap-4">
-                <div class="w-8 h-8 bg-accent-50 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
-                  <svg class="w-4 h-4 text-accent-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                  </svg>
+            <div class="grid sm:grid-cols-2 gap-4">
+              <div
+                v-for="(point, index) in points"
+                :key="point.title"
+                v-reveal="index * 100"
+                class="bg-white border border-brand-100 rounded-2xl p-5 hover:border-accent-500/40 hover:shadow-lg hover:shadow-accent-500/5 transition-all"
+              >
+                <div class="w-9 h-9 bg-accent-50 text-accent-600 rounded-xl flex items-center justify-center mb-3">
+                  <Check class="w-4 h-4" :stroke-width="2.5" />
                 </div>
-                <div>
-                  <h3 class="font-semibold text-dark-900 mb-1">{{ point.title }}</h3>
-                  <p class="text-dark-500 text-sm">{{ point.description }}</p>
-                </div>
+                <h3 class="font-semibold text-dark-900 mb-1">{{ point.title }}</h3>
+                <p class="text-dark-500 text-sm">{{ point.description }}</p>
               </div>
             </div>
           </div>
-          <div class="relative min-w-0">
-            <div class="absolute inset-0 bg-accent-500/5 rounded-3xl blur-3xl"></div>
-            <div class="relative bg-white border border-brand-100 rounded-3xl p-6 sm:p-8 shadow-xl shadow-brand-900/5">
-              <h3 class="font-semibold text-dark-900 text-lg">Our Tech Stack</h3>
-              <p class="text-dark-500 text-sm mt-1">Modern, proven tools, chosen to fit your project.</p>
-              <div class="mt-4 divide-y divide-brand-100">
+          <div v-reveal="150" class="relative min-w-0">
+            <div class="absolute inset-0 bg-accent-500/10 rounded-3xl blur-3xl" aria-hidden="true"></div>
+            <div v-tilt="3" class="card-glow !rounded-3xl p-6 sm:p-8 shadow-xl shadow-brand-900/5">
+              <h3 class="relative font-semibold text-dark-900 text-lg">Our Tech Stack</h3>
+              <p class="relative text-dark-500 text-sm mt-1">Modern, proven tools, chosen to fit your project.</p>
+              <div class="relative mt-4 divide-y divide-brand-100">
                 <div
                   v-for="group in techGroups"
                   :key="group.title"
                   class="py-4 last:pb-0 flex flex-col sm:flex-row sm:items-start gap-3 sm:gap-5"
                 >
                   <div class="flex items-center gap-3 sm:w-36 flex-shrink-0">
-                    <span class="w-9 h-9 rounded-lg bg-gradient-to-br from-brand-900 to-accent-500 text-white flex items-center justify-center flex-shrink-0">
+                    <span class="w-9 h-9 rounded-xl bg-gradient-to-br from-brand-900 to-accent-500 text-white flex items-center justify-center flex-shrink-0">
                       <component :is="group.icon" class="w-[18px] h-[18px]" :stroke-width="1.75" />
                     </span>
                     <span class="text-sm font-semibold text-dark-900">{{ group.title }}</span>
@@ -192,7 +209,7 @@
                     <li
                       v-for="item in group.items"
                       :key="item"
-                      class="px-3 py-1.5 rounded-full bg-brand-50 border border-brand-100 text-sm text-dark-800"
+                      class="px-3 py-1.5 rounded-full bg-brand-50 border border-brand-100 text-sm text-dark-800 hover:border-accent-500/40 hover:text-accent-700 transition-colors"
                     >
                       {{ item }}
                     </li>
@@ -203,33 +220,30 @@
           </div>
         </div>
       </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="relative overflow-hidden bg-brand-900">
-      <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-accent-500/20 via-transparent to-transparent"></div>
-      <ClientOnly><HeroNetwork dark /></ClientOnly>
-      <div class="relative section-padding">
-        <div class="container-custom text-center">
-          <h2 class="text-3xl md:text-4xl font-bold mb-4 text-white">Ready to Save Time and Grow Faster?</h2>
-          <p class="text-brand-200 max-w-xl mx-auto mb-10">
-            Tell us where your team loses time each week. We'll show you what can be automated or built to fix it.
-          </p>
-          <NuxtLink to="/contact" class="btn-primary text-base inline-flex items-center gap-2">
-            Start a Conversation
-            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-            </svg>
-          </NuxtLink>
+      <!-- Tech marquee -->
+      <div class="marquee mt-20 -mx-6 md:-mx-12 lg:-mx-24 overflow-hidden" aria-hidden="true">
+        <div class="marquee-track flex w-max gap-4 pr-4">
+          <span
+            v-for="(item, i) in [...allTech, ...allTech]"
+            :key="i"
+            class="px-5 py-2.5 rounded-full bg-white border border-brand-100 text-brand-900 font-medium text-sm whitespace-nowrap"
+          >
+            {{ item }}
+          </span>
         </div>
       </div>
     </section>
+
+    <CtaBanner
+      heading="Ready to Save Time and Grow Faster?"
+      text="Tell us where your team loses time each week. We'll show you what can be automated or built to fix it."
+      label="Start a Conversation"
+    />
   </div>
 </template>
 
 <script setup lang="ts">
-import { Code2, Network, Bot, Search, ClipboardList, Hammer, Rocket, HeartHandshake, Monitor, Server, Database, Wrench } from 'lucide-vue-next'
-
+import { Code2, Network, Bot, Search, ClipboardList, Hammer, Rocket, HeartHandshake, Monitor, Server, Database, Wrench, ArrowRight, Check } from 'lucide-vue-next'
 
 useSeoMeta({
   title: 'Custom Web Development & AI Agents for Startups | Corescale',
@@ -327,4 +341,6 @@ const techGroups = [
   { title: 'Data', icon: Database, items: ['PostgreSQL', 'MongoDB'] },
   { title: 'Tools', icon: Wrench, items: ['Docker', 'Kubernetes'] },
 ]
+
+const allTech = techGroups.flatMap(group => group.items)
 </script>
